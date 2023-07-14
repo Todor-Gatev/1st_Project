@@ -1,6 +1,7 @@
 def get_set(set_data):
     set_start, set_end = map(int, set_data.split(','))
-    return {x for x in range(set_start, set_end + 1)}
+    # return {x for x in range(set_start, set_end + 1)}
+    return set(range(set_start, set_end + 1))
 
 
 longest_intersection = []
