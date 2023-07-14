@@ -1,0 +1,12 @@
+# Read user input
+word = input()
+
+
+for char in range(len(word)-1, -1, -1):
+    print(word[char], end='')
+
+# Logic
+
+# End of Logic
+
+# Print Output
