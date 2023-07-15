@@ -1,6 +1,8 @@
 set_1 = set(map(int, input().split()))
 set_2 = set(map(int, input().split()))
-check_subset = True if set_1.issubset(set_2) or set_1.issuperset(set_2) else False
+# check_subset = True if set_1.issubset(set_2) or set_1.issuperset(set_2) else False
+check_subset = set_1.issubset(set_2) or set_1.issuperset(set_2)
+
 
 map_functions = {
     "Add First": lambda x: set_1.update(x),
@@ -13,6 +15,7 @@ map_functions = {
 }
 
 for _ in range(int(input())):
+    # command1, command2, *nums = input().split()
     command = input().split()
     action = command[0] + ' ' + command[1]
     nums = set(map(int, command[2:]))
