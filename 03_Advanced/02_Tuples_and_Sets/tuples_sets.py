@@ -30,7 +30,6 @@
 # my_set_1 = set({1, 2, 3, 5, 6})  # No Error, but no PEP 8
 my_frozen_set = frozenset({1, 2, 3, 5, 6})   # No Error and PEP 8 is OK
 print(my_frozen_set)  # frozenset({1, 2, 3, 5, 6})
-# set can contain only immutable types (str, int, tuple....but not lists, sets..)
 # my_set = {(1, 2, 3), [5, 6, 7, 1]}  # Error
 # my_set = {(1, 2, 3), {5, 6, 7, 1}}  # Error
 my_set = {(1, 2, 3), my_frozen_set}  # OK -> {(1, 2, 3), frozenset({1, 2, 3, 5, 6})}
@@ -41,6 +40,7 @@ print(my_set)  # OK
 # The elements of a set must be hashable.
 # To represent sets of sets, the inner sets must be frozenset objects.
 # If iterable is not specified, a new empty set is returned.
+# set can contain only immutable types (str, int, tuple, frozenset ....but not lists, sets..)
 
 # my_set = {"apple", "banana", "cherry"}
 # my_set.discard("test")  # does not raise error if el not in set
