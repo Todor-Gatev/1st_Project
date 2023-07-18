@@ -14,7 +14,7 @@ while details:
 # list_test_copy = list_test.copy()
 # queue = deque(list_test)
 #
-# start_time = time.time()
+start_time = time.time()
 # while queue:
 #     queue.popleft()
 #
@@ -48,3 +48,6 @@ while details:
 #
 # print(max_num)
 # print(max_num1)
+
+deque_of_strings = deque([0, 1, 2, 3])
+print(deque_of_strings[2])

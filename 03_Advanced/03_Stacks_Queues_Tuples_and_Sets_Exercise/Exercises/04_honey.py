@@ -19,7 +19,7 @@ while working_bees and nectar_list:
 
     if nectar < bee:
         working_bees.appendleft(bee)
-    elif nectar > bee:
+    elif nectar >= bee and nectar != 0:
         total_honey += map_functions[symbols.popleft()](bee, nectar)
 
 print(f"Total honey made: {total_honey}")
