@@ -7,19 +7,14 @@ sqr_matrix = []
 
 for row in range(rows - 2):
     for column in range(columns - 2):
-        current_sum = 0
-        temp_matrix = []
-        temp_row = -1
-        for i in range(row, row + 3):
-            temp_row += 1
-            temp_matrix.append([])
-            for j in range(column, column + 3):
-                current_sum += matrix[i][j]
-                temp_matrix[temp_row].append(matrix[i][j])
+        first_row = matrix[row][column:column + 3]
+        second_row = matrix[row + 1][column:column + 3]
+        third_row = matrix[row + 2][column:column + 3]
+        current_sum = sum(first_row) + sum(second_row) + sum(third_row)
 
         if max_sum < current_sum:
             max_sum = current_sum
-            sqr_matrix = temp_matrix.copy()
+            sqr_matrix = [first_row, second_row, third_row]
 
 print(f"Sum = {max_sum}")
 
