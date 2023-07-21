@@ -11,19 +11,6 @@ def find_p_b_positions(lair_f):
     return p_i_start, p_j_start, bunnies_f
 
 
-def get_new_position(move_f, row_f, col_f):
-    if move_f == "L":
-        col_f -= 1
-    elif move_f == "R":
-        col_f += 1
-    elif move_f == "U":
-        row_f -= 1
-    elif move_f == "D":
-        row_f += 1
-
-    return row_f, col_f
-
-
 def print_final_lair(bunnies_f):
     for i in range(row):
         for j in range(col):
@@ -34,24 +21,36 @@ def print_final_lair(bunnies_f):
         print()
 
 
+def spread_bunnies(bunnies_f):
+    bunnies_spread = set()
+    for bunny in bunnies_f:
+        bunnies_spread.add((bunny[0] - 1, bunny[1]))
+        bunnies_spread.add((bunny[0] + 1, bunny[1]))
+        bunnies_spread.add((bunny[0], bunny[1] - 1))
+        bunnies_spread.add((bunny[0], bunny[1] + 1))
+
+    return bunnies_spread
+
+
 row, col = [int(x) for x in input().split()]
 lair = [list(input()) for _ in range(row)]
 moves = input()
 
-p_row, p_col, bunnies_temp = find_p_b_positions(lair)
-bunnies = bunnies_temp.copy()
+directions = {
+    "U": (-1, 0),
+    "D": (1, 0),
+    "L": (0, -1),
+    "R": (0, 1),
+}
+
+p_row, p_col, bunnies = find_p_b_positions(lair)
 
 for move in moves:
-    for bunny in bunnies:
-        bunnies_temp.add((bunny[0] - 1, bunny[1]))
-        bunnies_temp.add((bunny[0] + 1, bunny[1]))
-        bunnies_temp.add((bunny[0], bunny[1] - 1))
-        bunnies_temp.add((bunny[0], bunny[1] + 1))
 
-    bunnies.update(bunnies_temp)
-    p_row_new, p_col_new = get_new_position(move, p_row, p_col)
+    bunnies.update(spread_bunnies(bunnies))
+    p_row_new, p_col_new = p_row + directions[move][0], p_col + directions[move][1]
 
-    if p_row_new not in range(row) or p_col_new not in range(col):
+    if not (p_row_new in range(row) and p_col_new in range(col)):
         print_final_lair(bunnies)
         print(f"won: {p_row} {p_col}")
         exit()

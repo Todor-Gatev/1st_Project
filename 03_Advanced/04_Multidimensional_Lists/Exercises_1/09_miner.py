@@ -1,5 +1,5 @@
 def find_components(field_f):
-    i_start, j_start = 0, 0
+    i_start, j_start = None, None
     coals_f = []
     route_end_f = tuple()
     for i_f in range(n):
