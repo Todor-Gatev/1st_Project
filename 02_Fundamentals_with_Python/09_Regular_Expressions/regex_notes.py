@@ -2,13 +2,17 @@ import re
 
 # ([0]|[1-9][0-9]*) -> matches 0 but not 00 or 01
 # (?:   ) - does not capture/assign a group ID.
+# (   ) - group with ID. \+359([\s-])\d\1 -> \1 recall group with ID=1 ([\s-])
+# (?P<name>   ) - group with name. \+359(?P<sep>[\s-])\d(?P=sep) -> (?P=sep) recall group (?P<sep>[\s-])
 # \b - only letters, nums and _, but not +-@....
 # ([0]|[1-9]\d*)(\.\d+)? vs ([0]|[1-9]\d*\.?\d+)
+# \w [a-zA-Z0-9_] be careful for _ !!!!!!
+# (^|(?<=\s)) new line or space
+# (^|\s) new line or space, but add the space to the result
 
 # word = input()
 # pattern = rf'\b{word}\b'  #  rf''
 
-# text = input().casefold()
 # word = input().casefold()
 # pattern = rf'\b{word}\b'  # -> how?
 # # matches = re.findall(rf'(^|(?<=\s)){word}($|(?=\s))', text) # will not much HOW+?
@@ -19,7 +23,10 @@ import re
 # (?:...) means do not create a group but act as a group
 
 # result = re.findall() # finds all, returns list
-# result = re.search() # finds first, not iterable, returns match type
+# result = re.search() # finds first, not iterable, returns match type or None
+# re.match is anchored at the start
+# re.fullmatch is anchored at the start and end of the pattern
+# re.search is not anchored
 # result = re.match() # finds first, if it's at the beginning only, but
 # if re.search(pattern, names):
 #     print("yes")

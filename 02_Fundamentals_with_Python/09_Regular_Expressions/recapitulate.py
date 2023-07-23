@@ -1,13 +1,24 @@
 import re
 
-html = input()
+total_cost = 0
+furniture = []
+regex = re.compile(r">{2}(?P<name>[A-Za-z]+)<{2}(?P<price>0|[1-9]\d*(\.\d+)?)!(?P<qty>\d+)")
 
-title = re.findall(r"(?<=<title>).+(?=</title>)", html)
+while True:
+    info = input()
 
-rough_content = re.findall(r"(?<=<body).+(?=/body>)", html)[0]
-rough_content = re.findall(r"(?<=>)[^<]+", rough_content)
-rough_content = ''.join(rough_content)
-content = rough_content.replace("\\n", '')
+    if info == "Purchase":
+        break
 
-print(f"Title: {title[0]}")
-print(f"Content: {content}")
+    result = regex.search(info)
+
+    if result:
+        name = result.group("name")
+        price = float(result.group("price"))
+        qty = int(result.group("qty"))
+        total_cost += price * qty
+        furniture.append(name)
+
+print("Bought furniture:")
+print(*furniture, sep='\n') if furniture else None
+print(f"Total money spend: {total_cost:.2f}")
