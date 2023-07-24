@@ -12,7 +12,9 @@ while True:
         break
 
     name = ''.join(name_regex.findall(text))
+
     if name in participants:
+
         if name not in race_info:
             race_info[name] = 0
 
@@ -20,6 +22,7 @@ while True:
         race_info[name] += distance
 
 race_info = sorted(race_info, key=lambda x: -race_info[x])
+
 print(f"1st place: {race_info[0]}")
 print(f"2nd place: {race_info[1]}")
 print(f"3rd place: {race_info[2]}")

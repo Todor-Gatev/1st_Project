@@ -1,24 +1,13 @@
 import re
 
-total_cost = 0
-furniture = []
-regex = re.compile(r">{2}(?P<name>[A-Za-z]+)<{2}(?P<price>0|[1-9]\d*(\.\d+)?)!(?P<qty>\d+)")
+star_regex = re.compile(r"[star]", re.IGNORECASE)
 
-while True:
-    info = input()
+for _ in range(int(input())):
+    message = input()
+    count_star = len(star_regex.findall(message))
+    decipher = ""
+    for ch in message:
+        decipher += chr(ord(ch) - count_star)
 
-    if info == "Purchase":
-        break
+    print(decipher)
 
-    result = regex.search(info)
-
-    if result:
-        name = result.group("name")
-        price = float(result.group("price"))
-        qty = int(result.group("qty"))
-        total_cost += price * qty
-        furniture.append(name)
-
-print("Bought furniture:")
-print(*furniture, sep='\n') if furniture else None
-print(f"Total money spend: {total_cost:.2f}")

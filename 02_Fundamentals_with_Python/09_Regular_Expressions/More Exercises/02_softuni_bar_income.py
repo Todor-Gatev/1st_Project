@@ -1,34 +1,26 @@
 import re
 
-command = input()
-
-# r"%(?P<name>[A-Z][a-z]+)%[^%\.\|\$]*<(?P<product>\w+)>[^%\.\|\$]*
-# \|(?P<count>\d+)\|[^%\.\|\$]*(?<!\d)(?P<price>\d+(\.\d+)?)\$"
-pattern = r"%(?P<name>[A-Z][a-z]+)%" \
-          r"[^%\.\|\$]*" \
-          r"<(?P<product>\w+)>" \
-          r"[^%\.\|\$]*" \
-          r"\|(?P<count>\d+)\|" \
-          r"[^%\.\|\$]*" \
-          r"(?<!\d)(?P<price>\d+(\.\d+)?)\$"
-regex = re.compile(pattern)
-
 income = 0
 
-while command != "end of shift":
-    # if not regex.search(command):
-    #     command = input()
-    #     continue
+regex = re.compile(r"%(?P<name>[A-Z][a-z]+)%"
+                   r"[^|$%.]*"
+                   r"<(?P<product>\w+)>"
+                   r"[^|$%.]*"
+                   r"\|(?P<qty>\d+)\|"
+                   r"[^|$%.]*"
+                   r"(?<=[^0-9])(?P<price>\d+(\.\d+)?)\$")
 
-    result = regex.finditer(command)
+while True:
+    info = input()
+
+    if info == "end of shift":
+        break
+
+    result = regex.finditer(info)
+
     for res in result:
-        name = res.group("name")
-        product = res.group("product")
-        qty = int(res.group("count"))
-        price = float(res.group("price"))
-        income += qty * price
-        print(f"{name}: {product} - {qty * price:.2f}")
-
-    command = input()
+        total_price = int(res.group('qty')) * float(res.group('price'))
+        income += total_price
+        print(f"{res.group('name')}: {res.group('product')} - {total_price:.2f}")
 
 print(f"Total income: {income:.2f}")
