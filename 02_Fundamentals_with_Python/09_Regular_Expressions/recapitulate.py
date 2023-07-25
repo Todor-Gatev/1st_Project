@@ -1,13 +1,12 @@
 import re
 
-star_regex = re.compile(r"[star]", re.IGNORECASE)
+info = input()
 
-for _ in range(int(input())):
-    message = input()
-    count_star = len(star_regex.findall(message))
-    decipher = ""
-    for ch in message:
-        decipher += chr(ord(ch) - count_star)
+title = re.findall(r"<title>(.+)</title>", info)
+rough_content = ''.join(re.findall(r"<body(>.+<)/body>", info))
+rough_content = re.findall(r">([^<]+)", rough_content)
+content = ''.join(rough_content)
+content = content.replace("\\n", '')
 
-    print(decipher)
-
+print(f"Title: {title[0]}")
+print(f"Content: {content}")

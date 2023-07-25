@@ -39,7 +39,6 @@ print(c_nums)
 # names.sort()   # changes the list. Does not return result
 # print(names)  # ['apple', 'banana', 'cherry', 'zorro', 'zz']
 
-
 # command = "test 23 47"
 # action, value = command.split(" ", 1)  # max 2 elements
 # # action, value = command.split()  #
