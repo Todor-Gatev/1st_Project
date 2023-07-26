@@ -8,6 +8,7 @@ for _ in range(int(input())):
 
 while True:
     command = input()
+
     if command == "Stop":
         break
 
@@ -18,6 +19,7 @@ while True:
     if action == "Drive":
         distance = int(command[2])
         fuel = int(command[3])
+
         if fuel > cars[car][1]:
             print("Not enough fuel to make that ride")
         else:
@@ -30,6 +32,7 @@ while True:
             cars.pop(car)
     elif action == "Refuel":
         fuel = int(command[2])
+
         if cars[car][1] + fuel > 75:
             fuel = 75 - cars[car][1]
             cars[car][1] = 75
@@ -39,6 +42,7 @@ while True:
             print(f"{car} refueled with {fuel} liters")
     elif action == "Revert":
         kilometers = int(command[2])
+
         if cars[car][0] - kilometers < 10000:
             cars[car][0] = 10000
         else:
