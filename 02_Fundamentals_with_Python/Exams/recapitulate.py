@@ -1,52 +1,53 @@
-cars = {}
+heroes = {}
 
 for _ in range(int(input())):
-    car, mileage, fuel = [int(x) if x.isdigit() else x for x in input().split('|')]
-    cars[car] = [mileage, fuel]
+    name, hit_points, mana_points = input().split()
+    hit_points, mana_points = int(hit_points), int(mana_points),
+
+    heroes[name] = [hit_points, mana_points]
 
 while True:
     command = input()
 
-    if command == "Stop":
+    if command == "End":
         break
 
-    command = command.split(" : ")
-    action, car = command[0], command[1],
+    command = command.split(" - ")
+    action, name = command[0], command[1],
 
-    if action == "Drive":
-        distance, fuel = int(command[2]), int(command[3]),
+    if action == "CastSpell":
+        mp_needed, spell_name = int(command[2]), command[3],
 
-        if cars[car][1] < fuel:
-            print("Not enough fuel to make that ride")
+        if mp_needed <= heroes[name][1]:
+            heroes[name][1] -= mp_needed
+            print(f"{name} has successfully cast {spell_name} and now has {heroes[name][1]} MP!")
         else:
-            print(f"{car} driven for {distance} kilometers. {fuel} liters of fuel consumed.")
-            cars[car][0] += distance
-            cars[car][1] -= fuel
+            print(f"{name} does not have enough MP to cast {spell_name}!")
+    elif action == "TakeDamage":
+        damage, attacker = int(command[2]), command[3]
 
-            if cars[car][0] >= 100000:
-                cars.pop(car)
-                print(f"Time to sell the {car}!")
-    elif action == "Refuel":
-        fuel = int(command[2])
-        fuel_in_tank = cars[car][1]
-
-        if fuel + fuel_in_tank > 75:
-            fuel = 75 - fuel_in_tank
-            cars[car][1] = 75
+        if heroes[name][0] > damage:
+            heroes[name][0] -= damage
+            print(f"{name} was hit for {damage} HP by {attacker} and now has {heroes[name][0]} HP left!")
         else:
-            cars[car][1] += fuel
+            heroes.pop(name)
+            print(f"{name} has been killed by {attacker}!")
+    elif action == "Recharge":
+        amount = int(command[2])
 
-        print(f"{car} refueled with {fuel} liters")
-    elif action == "Revert":
-        revert_km = int(command[2])
-        car_km = cars[car][0]
+        if amount + heroes[name][1] > 200:
+            amount = 200 - heroes[name][1]
 
-        if car_km - revert_km < 10000:
-            cars[car][0] = 10000
-        else:
-            cars[car][0] -= revert_km
-            print(f"{car} mileage decreased by {revert_km} kilometers")
+        heroes[name][1] += amount
+        print(f"{name} recharged for {amount} MP!")
+    elif action == "Heal":
+        amount = int(command[2])
 
-for car, info in cars.items():
-    mileage, fuel = info[0], info[1]
-    print(f"{car} -> Mileage: {mileage} kms, Fuel in the tank: {fuel} lt.")
+        if amount + heroes[name][0] > 100:
+            amount = 100 - heroes[name][0]
+
+        heroes[name][0] += amount
+        print(f"{name} healed for {amount} HP!")
+
+for name, values in heroes.items():
+    print(f"{name}\n  HP: {values[0]}\n  MP: {values[1]}")

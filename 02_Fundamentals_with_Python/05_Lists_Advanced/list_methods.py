@@ -1,4 +1,6 @@
 # current_nums = nums.copy()!!!!! - if no copy is referent
+# lst = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+# a, *_, e = lst  # print(a, e) -> 0 9
 
 # bottles = list(map(int, input().split()))
 # bottles = list(map(float, input().split()))
