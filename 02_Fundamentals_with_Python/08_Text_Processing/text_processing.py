@@ -55,7 +55,7 @@
 # y = str_1.isalpha()  # False
 # z = str_1.isdigit()  # False Exponents, like ², are also considered to be a digit
 # a = '-1'.isdecimal()  # False 0-9
-# b = '3/4'.isnumeric()  # False 0-9 like ² and ¾
+# b = '3/4'.isnumeric()  # False
 # b = '¾'.isnumeric()      # True 0-9 like ² and ¾
 
 # x = "welcome".isascii()  # True

@@ -28,19 +28,32 @@
 # print(get_info(name="George", town="Sofia", age=20))  # kwargs can read this tipe of info
 # print(get_info("George", "Sofia", 20))  # for correct result needs correct sequence
 
-# def a():
-#     print("a")
-#
-#     def b():
-#         print("b")
-#
-#     return b  # if not return b -> b is hidden
-#
-#
-# a()()  # if b is not hidden, we can indirectly call b
-# res = a()
-# res()  # if b is not hidden, we can indirectly call b
-# # b()  # ERROR
+def a(x1, y1):
+    x = 'x'
+    print(x)
+    print(x1)
+    y = 'p'
+
+    def b():
+        global y
+        nonlocal y1
+        y1 = 'y1'
+        y = 'z'
+        print(y)
+        print(y1)
+
+    return b  # if not return b -> b is hidden
+
+
+x = 'a'
+y = 'b'
+a(x, y)()  # if b is not hidden, we can indirectly call b
+res = a(x, y)
+res()  # if b is not hidden, we can indirectly call b
+print(x)
+print(y)
+# b()  # ERROR
+
 
 # def factorial(number):
 #     if not isinstance(number, int) or number < 0:
