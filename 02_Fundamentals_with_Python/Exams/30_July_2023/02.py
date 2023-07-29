@@ -1,3 +1,5 @@
+import re
+
 # Read user input
 
 # Variables
