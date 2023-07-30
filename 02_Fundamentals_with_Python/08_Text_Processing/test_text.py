@@ -5,3 +5,12 @@
 # a = "abc"
 # c = a.replace('a', 'd')
 # print(c)
+#
+# a = "abgbbs"
+# print(a.find('b'))
+
+
+print(bool(-1))
+print(bool(""))
+
+
