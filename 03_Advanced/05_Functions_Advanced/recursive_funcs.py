@@ -33,5 +33,5 @@ def palindrome(word, idx):
 
 
 # print(palindrome("abcba", 0))
-print(palindrome("abcdba", 0))
+print(palindrome("abcdcba", 0))
 # print(palindrome("peter", 0))

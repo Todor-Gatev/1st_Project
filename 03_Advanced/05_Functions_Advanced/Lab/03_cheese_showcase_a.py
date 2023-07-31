@@ -3,9 +3,8 @@ def sorting_cheeses(**kwargs):
     sorted_cheese = sorted(kwargs.items(), key=lambda x: (-len(x[1]), x[0]))
 
     for cheese, values in sorted_cheese:
-        res += cheese
         values.sort(reverse=True)
-        res += "\n" + "\n".join(str(x) for x in values) + "\n"
+        res += cheese + "\n" + "\n".join(str(x) for x in values) + "\n"
 
     return res[:-1]
 

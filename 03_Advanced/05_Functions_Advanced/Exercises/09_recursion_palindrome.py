@@ -9,4 +9,5 @@ def palindrome(word, idx):
 
 
 print(palindrome("abcba", 0))
+
 # print(palindrome("peter", 0))
