@@ -102,6 +102,7 @@ fruits = ['apple', 'banana', 'cherry']
 # print(adults2)
 
 # adults = [filter(lambda x: x > 17, ages)]
+# adults = list(filter(lambda x: x > 17, ages))
 # print(type(adults))
 # print(adults)
 # print(ages)
