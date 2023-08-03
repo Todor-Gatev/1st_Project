@@ -7,15 +7,16 @@
 #         res += num
 #     return res
 
-# def sum_values(a, **kwargs):  # **kwargs -> dict with 0 or more ele-> a: 3  kwargs: {'b': 7, 'c': 12}
-#     return kwargs
+def sum_values(a, **kwargs):  # **kwargs -> dict with 0 or more ele-> a: 3  kwargs: {'b': 7, 'c': 12}
+    print(a)
+    print(kwargs)
 
 
-# z = [1, 2, 3]
+z = [1, 2, 3]
 # sum_nums(3, 7, *z)
 # sum_nums(3, 7, 12, 19)
-# sum_values(3, b=7, c=12)
-# sum_values(a=3)
+sum_values(3, b=7, c=12)
+sum_values(a=3)
 
 # print(**{"name": "George", "town": "Sofia", "age": 20})  # error
 # print(*[1, 2, 3])  # OK
@@ -28,31 +29,31 @@
 # print(get_info(name="George", town="Sofia", age=20))  # kwargs can read this tipe of info
 # print(get_info("George", "Sofia", 20))  # for correct result needs correct sequence
 
-def a(x1, y1):
-    x = 'x'
-    print(x)
-    print(x1)
-    y = 'p'
-
-    def b():
-        global y
-        nonlocal y1
-        y1 = 'y1'
-        y = 'z'
-        print(y)
-        print(y1)
-
-    return b  # if not return b -> b is hidden
-
-
-x = 'a'
-y = 'b'
-a(x, y)()  # if b is not hidden, we can indirectly call b
-res = a(x, y)
-res()  # if b is not hidden, we can indirectly call b
-print(x)
-print(y)
-# b()  # ERROR
+# def a(x1, y1):
+#     x = 'x'
+#     print(x)
+#     print(x1)
+#     y = 'p'
+#
+#     def b():
+#         global y
+#         nonlocal y1
+#         y1 = 'y1'
+#         y = 'z'
+#         print(y)
+#         print(y1)
+#
+#     return b  # if not return b -> b is hidden
+#
+#
+# x = 'a'
+# y = 'b'
+# a(x, y)()  # if b is not hidden, we can indirectly call b
+# res = a(x, y)
+# res()  # if b is not hidden, we can indirectly call b
+# print(x)
+# print(y)
+# # b()  # ERROR
 
 
 # def factorial(number):

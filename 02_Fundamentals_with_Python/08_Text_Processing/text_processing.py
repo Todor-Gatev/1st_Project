@@ -63,17 +63,17 @@
 # x = "lo!\nAre".isprintable()  # False
 
 
-# x = "ac"
-# y = "dc"
-# a = 5
-# b = 3
-# z = "band %s - %s" % (x, y)  # band ac - dc
-# w = "band %d - %d" % (a, b)  # band 5 - 3
+x = "ac"
+y = "dc"
+a = 5
+b = 3
+z = "band %s - %s" % (x, y)  # band ac - dc
+w = "band %d - %d" % (a, b)  # band 5 - 3
 # w = "band {} - {}".format(x, a)   # band ac - 5
 
-# print('   aabb  '.strip())
-# print('aabb  ')
-# print('   aabb  ')
+print('   aabb  '.strip())
+print('aabb  ')
+print('   aabb  ')
 
 txt = "Welcome To My World"
 # x = txt.replace('l', '')  # Wecome To My Word

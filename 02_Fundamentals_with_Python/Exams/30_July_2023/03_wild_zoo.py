@@ -1,5 +1,3 @@
-# Read user input
-
 # Variables
 zoo = {}
 
