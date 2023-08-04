@@ -48,3 +48,4 @@ print(my_set)  # OK
 # my_set.remove("test")  # KeyError: 'test'
 # my_set.discard("banana")
 # print(my_set)  # {'cherry', 'apple'}
+my_set.add(1)

@@ -116,5 +116,5 @@ dict_test = {3: 4, 4: 5, 5: 5, 7: 2}
 # for ch, count in sorted(dict_test.items()):
 #     print(f"{ch}: {count} time/s")
 
-print(list(car.items()))
-print(car['model'])
+# print(list(car.items()))
+# print(car['model'])
