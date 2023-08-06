@@ -14,7 +14,9 @@ class InvalidDomainError(Exception):
 
 
 allowed_domains = {"com", "bg", "net", "org"}
-regex = re.compile(r"[^@]{5,}@[^@.]+\.(?P<domain>[^@]+)")
+regex = re.compile(r"\w{5,}@[^@.]+(\.(?P<domain>[^@.]+))+")  # according to exercise requirements
+# regex = re.compile(r"(?:^|(?<=\s))[a-z0-9]+(?:[-._][a-z0-9]+)*@[a-z]+(?:-[a-z]+)*(?:\.[a-z]+)+(?:$|(?=[.,\s]))")
+name_regex = re.compile(r"\w{5,}")
 
 while True:
     checked_email = input()
@@ -30,19 +32,12 @@ while True:
         else:
             raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
     else:
-        if '@' not in checked_email:
-            raise MustContainAtSymbolError
+        if not name_regex.match(checked_email):
+            raise NameTooShortError("Name must be more than 4 characters "
+                                    "and can contain only letters, digits and underscores!")
+        elif checked_email.count('@') != 1:
+            raise MustContainAtSymbolError("Email must contain exactly one @")
+        else:
+            raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
 
-
-# NameTooShortError - raise it when the name in the email is less than or equal to 4
-# ("peter" will be the name in the email "peter@gmail.com")
-# MustContainAtSymbolError - raise it when there is no "@" in the email
-# InvalidDomainError - raise it when the domain of the email is invalid (valid domains are: .com, .bg, .net, .org)
-#
-# When an error is encountered, raise it with an appropriate message:
-# NameTooShortError - "Name must be more than 4 characters"
-# MustContainAtSymbolError - "Email must contain @"
-# InvalidDomainError - "Domain must be one of the following: .com, .bg, .org, .net"
-#
-# Hint: use the following syntax to add a message to the Exception: MyException("Exception Message")
-# If the current email is valid, print "Email is valid" and read the next one
+# peter@gmail.net.aus.com    peter@gmail.com  pete@hotmail.com
