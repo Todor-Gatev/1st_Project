@@ -2,13 +2,17 @@
 
 try:
     times = int(input())
+    idx = int(input())
+    my_list = [1, 2, 3, 4, 5, 'a']
     # times = float(input())
-    print(7 / times)
+    print(my_list[idx] / times)
 except ValueError as ex:
     print(ex)  # invalid literal for int() with base 10: 'sgd'
 except ZeroDivisionError as text:
     print("blabla")
     print(text)  # division by zero
+except IndexError as idx_error:
+    print(idx_error)
 
 # try:
 #     print("try")

@@ -20,7 +20,7 @@ import re
 # print(len(matches))
 
 # if there is more than 1 group, do not use re.findall(), but re.finditer or (?:...)
-# (?:...) means do not create a group but act as a group
+# (?:...) means do not create a group ID, but act as a group
 
 # result = re.findall() # finds all, returns list
 # result = re.search() # finds first, not iterable, returns match type or None
