@@ -11,6 +11,9 @@ text = input()
 #     print(res.group("user") + "@" + res.group("host"))
 
 #  solution 2
-pattern = r"(?:^|(?<=\s))[a-z0-9]+(?:[-._][a-z0-9]+)*@[a-z]+(?:-[a-z]+)?(?:\.[a-z]+)+(?:$|(?=[,\s\.]))"
+pattern = r"(?:^|(?<=\s))[a-z0-9]+(?:[-._][a-z0-9]+)*@[a-z]+(?:-[a-z]+)*(?:\.[a-z]+)+(?:$|(?=[,\s\.]))"
 res = re.findall(pattern, text)
 print(*res, sep='\n')
+
+# Lessons
+regex = re.compile(r"(?:^|(?<=\s))[a-z0-9]+(?:[-._][a-z0-9]+)*@[a-z]+(?:-[a-z]+)*(?:\.[a-z]+)+(?:$|(?=[.,\s]))")
