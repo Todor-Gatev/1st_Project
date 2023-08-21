@@ -7,7 +7,7 @@ class Cup:
         if self.quantity + quantity <= self.size:
             self.quantity += quantity
 
-    def status(self):
+    def status(self) -> int:
         return self.size - self.quantity
 
 

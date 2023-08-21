@@ -1,6 +1,8 @@
 class Employee:
-    def __init__(self, id: int, first_name: str, last_name: str, salary: int):
-        self.id = id
+    MONTHS = 12
+
+    def __init__(self, employee_id: int, first_name: str, last_name: str, salary: int):
+        self.id = employee_id
         self.first_name = first_name
         self.last_name = last_name
         self.salary = salary
@@ -10,16 +12,20 @@ class Employee:
 
     def raise_salary(self, amount: int):
         self.salary += amount
+
         return self.salary
 
     def get_annual_salary(self):
-        return self.salary * 12
+        return self.salary * Employee.MONTHS
+        # return self.salary * self.MONTHS
+        # return self.salary * 12
 
 
 employee = Employee(744423129, "John", "Smith", 1000)
 print(employee.get_full_name())
 print(employee.raise_salary(500))
 print(employee.get_annual_salary())
+
 
 import unittest
 
