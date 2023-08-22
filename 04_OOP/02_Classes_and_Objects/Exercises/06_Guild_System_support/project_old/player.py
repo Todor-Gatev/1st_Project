@@ -2,14 +2,12 @@ from typing import Dict
 
 
 class Player:
-    PLAYER_DEFAULT_GUILD = "Unaffiliated"
-
     def __init__(self, name: str, hp: int, mp: int):
         self.name = name
         self.hp = hp
         self.mp = mp
         self.skills: Dict[str: int] = {}
-        self.guild = Player.PLAYER_DEFAULT_GUILD
+        self.guild = "Unaffiliated"
 
     def add_skill(self, skill_name: str, mana_cost: int) -> str:
         if skill_name in self.skills:

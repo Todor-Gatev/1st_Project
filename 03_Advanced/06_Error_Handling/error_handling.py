@@ -13,6 +13,9 @@ except ZeroDivisionError as text:
     print(text)  # division by zero
 except IndexError as idx_error:
     print(idx_error)
+# except (IndexError, ValueError) as idx_error:
+#     print(idx_error)
+
 
 # try:
 #     print("try")

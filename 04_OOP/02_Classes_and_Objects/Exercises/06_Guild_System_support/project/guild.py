@@ -9,25 +9,25 @@ class Guild:
         self.name = name
         self.players: List[Player] = []
 
-    def assign_player(self, player_x: Player) -> str:
+    def assign_player(self, player: Player) -> str:
         # if player in self.players:
-        if player_x.guild == self.name:
-            return f"Player {player_x.name} is already in the guild."
+        if player.guild == self.name:
+            return f"Player {player.name} is already in the guild."
 
-        if player_x.guild != Player.PLAYER_DEFAULT_GUILD:
-            return f"Player {player_x.name} is in another guild."
+        if player.guild != Player.PLAYER_DEFAULT_GUILD:
+            return f"Player {player.name} is in another guild."
 
-        self.players.append(player_x)
+        self.players.append(player)
         # Guild.all_players.append(player)
-        player_x.guild = self.name
+        player.guild = self.name
 
-        return f"Welcome player {player_x.name} to the guild {self.name}"
+        return f"Welcome player {player.name} to the guild {self.name}"
 
     def kick_player(self, player_name: str):
-        for player_y in self.players:
-            if player_y.name == player_name:
-                self.players.remove(player_y)
-                player_y.guild = Player.PLAYER_DEFAULT_GUILD
+        for player in self.players:
+            if player.name == player_name:
+                self.players.remove(player)
+                player.guild = Player.PLAYER_DEFAULT_GUILD
                 # Guild.all_players.remove(guild_player)
 
                 return f"Player {player_name} has been removed from the guild."

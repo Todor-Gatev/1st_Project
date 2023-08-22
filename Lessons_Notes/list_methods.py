@@ -64,8 +64,9 @@ fruits = ['apple', 'banana', 'cherry']
 # x = fruits.pop(1)  # default idx=-1: last el
 # print(fruits)  # ['apple', 'cherry']
 # print(x)  # banana
-# fruits.insert(12, "test")
-# fruits.insert(-11, "test")
+# fruits.insert(12, "test1")  # inserts "test" at the end, because idx = 12 not in range
+# fruits.insert(-11, "test2")  # inserts "test" at the beginning, because idx = -11 not in range
+# fruits.insert(-2, "test3")
 # print(fruits)
 
 # x = [5, 10, 6, 3, 5, 4]
@@ -115,7 +116,7 @@ fruits = ['apple', 'banana', 'cherry']
 # indexes = []
 # while True:
 #     try:
-#         index = test_list.index(1)
+#         index = test_list.index('a')
 #         indexes.append(index)
 #         test_list[index] = None
 #     except ValueError:

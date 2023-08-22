@@ -1,5 +1,5 @@
 # recursion is time and space consuming - can be used when there is dictionary in dictionary...unknown times
-# recursion - see lab task 6
+# recursion - see lab task 6 and recursive_funcs.py
 
 # def sum_nums(a, c=5,  *args):  # *args (packing)-> tuple with 0 or more ele-> a: 3 c: 7 args: (12, 19)
 #     res = a + c
@@ -72,3 +72,16 @@ sum_values(a=3)
 # print(factorial(5))  # 120
 # print(factorial(-5))  # Sorry. 'number' is incorrect.
 # print(factorial('a'))  # Sorry. 'number' is incorrect.
+
+# def not_recursion():
+#     def not_recursion():
+#         def not_recursion():
+#             print(3)
+#
+#         print(2)
+#         not_recursion()
+#
+#     print(1)
+#     not_recursion()
+#
+# not_recursion()
