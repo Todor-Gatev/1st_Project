@@ -2,18 +2,9 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/02_Classes_and_Objects/Exercises/05_To-do_List" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/02_Classes_and_Objects/Exercises/06_Guild_System" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/02_Classes_and_Objects/Exercises/07_Spoopify" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/02_Classes_and_Objects/Exercises/08_Library" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/01_First_Steps_in_OOP/Exercises/08_pokemon_battle_new" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/01_First_Steps_in_OOP/Exercises/08_pokemon_battle_old/project" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/01_First_Steps_in_OOP/Exercises/08_pokemon_battle" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/02_Classes_and_Objects/Exercises/06_Guild_System_support" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/04_OOP/02_Classes_and_Objects/Exercises/06_Guild_System_error" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/04_OOP/03_Inheritance/Lab/03_Multiple Inheritance" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <content url="file://$MODULE_DIR$/04_OOP/01_First_Steps_in_OOP/Exercises/08_pokemon_battle_old/project" />
     <orderEntry type="jdk" jdkName="Python 3.11" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
