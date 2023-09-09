@@ -2,5 +2,5 @@ from project.product import Product
 
 
 class Drink(Product):
-    def __int__(self, name: str, quantity: int):
+    def __init__(self, name):
         super().__init__(name, 10)
