@@ -33,6 +33,17 @@ print(b_nums)
 del c_nums[left_idx:right_idx + 1]
 print(c_nums)
 
+a = list(text)
+a = list(filter(lambda x: x != '1', a))
+print(a)
+
+item_list = ['item', 5, 'foo', 3.14, True]
+item_list = [e for e in item_list if e not in ('item', 5)]
+
+item_list1 = ['item', 5, 'foo', 3.14, True]
+list_to_remove = ['item', 5, 'foo']
+final_list = list(set(item_list1) - set(list_to_remove))
+
 # names = ['zorro', 'zz', 'apple', 'banana', 'cherry']
 # sorted_names = sorted(names, key=lambda x: (-len(x), x))   # does not change the list
 # print(sorted_names)   # ['banana', 'cherry', 'apple', 'zorro', 'zz']

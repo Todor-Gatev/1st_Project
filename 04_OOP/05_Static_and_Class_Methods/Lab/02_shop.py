@@ -13,7 +13,6 @@ class Shop:
         return cls(name, type_p, 10)
 
     def add_item(self, item_name: str):
-
         if self.capacity == sum(self.items.values()):
             self.items.pop(item_name)
             return "Not enough capacity in the shop"

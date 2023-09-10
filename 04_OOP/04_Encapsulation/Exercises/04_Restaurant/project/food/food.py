@@ -9,7 +9,3 @@ class Food(Product):
     @property
     def grams(self):
         return self.__grams
-
-    # @grams.setter
-    # def grams(self, value):
-    #     pass

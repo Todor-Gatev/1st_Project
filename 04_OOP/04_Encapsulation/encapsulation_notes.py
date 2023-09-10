@@ -71,7 +71,7 @@ print(getattr(person, "age", "asd"))  # 12
 #      whether or not there's the attribute.
 #       __getattr__ gets called “last”(the lowest priority),
 #        if Python cannot find the attribute"""
-#
+
 #
 # person = Person(12)
 # print(person.name)  # "not .... blabla"
