@@ -1,8 +1,5 @@
-from project.product_repository import ProductRepository
-
-
-class Product():
-    def __init__(self, name: str, quantity: int):
+class Product:
+    def __init__(self, name: str, quantity: int) -> None:
         self.name = name
         self.quantity = quantity
 
@@ -13,5 +10,5 @@ class Product():
     def increase(self, quantity: int) -> None:
         self.quantity += quantity
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.name
