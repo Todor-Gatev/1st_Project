@@ -9,8 +9,3 @@ class Beverage(Product):
     @property
     def milliliters(self) -> float:
         return self.__milliliters
-
-    # @milliliters.setter
-    # def milliliters(self, value):
-    #
-    #     pass
