@@ -1,7 +1,15 @@
 # methods are faster than try except!!!
 
+# times = "asd"
+# print(7 / times)  # TypeError: unsupported operand type(s) for /: 'int' and 'str'
+# print("7" / times)  # TypeError: unsupported operand type(s) for /: 'str' and 'str'
+# print(7 / int(times))  # ValueError: invalid literal for int() with base 10: 'asd'
+# print(int("asd"))  # ValueError: invalid literal for int() with base 10: 'asd'
+# print(int([11]))  # TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
+
 # try:
 #     times = int(input())
+#     times = "asd"  # TypeError: unsupported operand type(s) for /: 'int' and 'str'
 #     # times = float(input())
 #     print(7 / times)
 # except ValueError as ex:

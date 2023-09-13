@@ -19,30 +19,46 @@
 # print(result2)
 # # print(result3)
 
-class Product:
-    def __init__(self, name: str, price: float):
-        self.__name = name
-        self.__price = price
+# class Product:
+#     def __init__(self, name: str, price: float):
+#         self.__name = name
+#         self.__price = price
+#
+#     # region getters
+#     @property
+#     def name(self):
+#         return self.__name
+#
+#     @property
+#     def price(self):
+#         return self.__price
+#     # endregion
+#
+#
+# p = Product("asd", 3)
+# print(p.name)
+#
+# p.__name = "fff"
+# print(p.name)
+# p._Product__name = "fff"
+# print(p.name)
+#
+# p.ass = "ass"
+# print(p.ass)
+# p.name = "blabla"
 
-    # region getters
-    @property
-    def name(self):
-        return self.__name
 
-    @property
-    def price(self):
-        return self.__price
-    # endregion
+# print(int("asd"))  # ValueError: invalid literal for int() with base 10: 'asd'
+# print(int("2"))  # TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
 
+fruits = ['apple', 'banana', 'cherry']
 
-p = Product("asd", 3)
-print(p.name)
+points = {
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
 
-p.__name = "fff"
-print(p.name)
-p._Product__name = "fff"
-print(p.name)
+fruits.extend(points)
 
-p.ass = "ass"
-print(p.ass)
-p.name = "blabla"
+print(fruits)

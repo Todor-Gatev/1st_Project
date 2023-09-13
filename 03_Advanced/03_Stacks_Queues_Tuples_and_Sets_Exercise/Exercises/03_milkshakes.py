@@ -36,10 +36,10 @@ if chocolates:
 else:
     print("Chocolate: empty")
 
-if cups:
-    print("Milk: ", end='')
-    print(*cups, sep=", ")
-else:
-    print("Milk: empty")
+# if cups:
+#     print("Milk: ", end='')
+#     print(*cups, sep=", ")
+# else:
+#     print("Milk: empty")
 
 print(f"Milk: {', '.join(str(x) for x in cups) or 'empty'}")
