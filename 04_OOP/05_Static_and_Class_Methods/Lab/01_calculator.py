@@ -15,6 +15,7 @@ class Calculator:
     @staticmethod
     def divide(*args):
         return reduce(lambda x, y: x / y, args)
+        # return reduce(lambda x, y: x + y if x == 0 or y == 0 else x / y, args)
 
     @staticmethod
     def subtract(*args):
