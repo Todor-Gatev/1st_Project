@@ -38,3 +38,11 @@
 
 from sys import path
 print(*path, sep="\n")
+
+# a = [1] * 3
+# print(a)
+# a[2] += 7
+# print(a)
+
+a = f"{'-' * 11}\n{'-' * 11}"
+print(a)

@@ -51,14 +51,17 @@
 # print(int("asd"))  # ValueError: invalid literal for int() with base 10: 'asd'
 # print(int("2"))  # TypeError: int() argument must be a string, a bytes-like object or a real number, not 'list'
 
-fruits = ['apple', 'banana', 'cherry']
+# fruits = ['apple', 'banana', 'cherry']
+#
+# points = {
+#   "brand": "Ford",
+#   "model": "Mustang",
+#   "year": 1964
+# }
+#
+# fruits.extend(points)
+#
+# print(fruits)
 
-points = {
-  "brand": "Ford",
-  "model": "Mustang",
-  "year": 1964
-}
-
-fruits.extend(points)
-
-print(fruits)
+a = [[]] * 3
+print(a)
