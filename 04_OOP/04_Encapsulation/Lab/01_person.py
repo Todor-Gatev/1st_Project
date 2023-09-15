@@ -10,7 +10,9 @@ class Person:
         return self.__age
 
 
-person = Person("George", 32)
-print(person.get_name())
-print(person.get_age())
-
+# person = Person("George", 32)
+# print(person.get_name())
+# print(person.get_age())
+# person.age = 37
+# print(person.get_age())
+# print(person.age())
