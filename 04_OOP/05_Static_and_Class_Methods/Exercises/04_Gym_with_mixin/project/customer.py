@@ -20,8 +20,13 @@ class Customer(NextIdMixin):
         return f"Customer <{self.id}> {self.name}; Address: {self.address}; Email: {self.email}"
 
 
-# c = Customer("ala", "vd", "ljf")
-# c1 = Customer("ala2", "vd2", "ljf2")
+# c1 = Customer("ala1", "vd1", "ljf")
+# c2 = Customer("ala2", "vd2", "ljf2")
+# c3 = Customer("ala3", "vd3", "ljf3")
 #
-# print(c)
+# print(c1)
+# print(c2)
+# print(c3)
+#
+# c1 = Customer("ala1", "vd1", "ljf")
 # print(c1)
