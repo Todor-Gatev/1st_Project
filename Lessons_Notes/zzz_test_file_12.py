@@ -1,5 +1,5 @@
-# from sys import path
-# print(*path, sep="\n")
+from sys import path
+print(*path, sep="\n")
 
 # my_list = ['a', 'b', 'c', 'd']
 # a = ' - '.join(x for x in my_list)

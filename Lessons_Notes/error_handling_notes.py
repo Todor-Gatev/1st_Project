@@ -38,11 +38,11 @@
 #     times = int(input())
 #     # times = float(input())
 # except ValueError as ex:
-#     print(ex)
+#     print(f"ValueError: {ex}")
 # except KeyError:
 #     print()
-# except NameError:
-#     print()
+# except (NameError, TypeError, IndexError) as ex:
+#     print(ex)
 
 # custom exceptions
 class SmallValueException(Exception):

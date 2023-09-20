@@ -39,10 +39,12 @@
 from sys import path
 print(*path, sep="\n")
 
-# a = [1] * 3
-# print(a)
-# a[2] += 7
+# a = f"{'-' * 11}\n{'-' * 11}"
 # print(a)
 
-a = f"{'-' * 11}\n{'-' * 11}"
-print(a)
+# date = "20.3.2223"
+# date = date.split('.')
+# print(date[1])
+# print(type(date[1]))
+# num_month = {"01": "January", "2": "February", "3": "March", "4": "April", "5": "May"}
+# print(num_month[date[1]])

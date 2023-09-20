@@ -5,6 +5,13 @@ class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
+    # region find object via attribute value
+    @staticmethod
+    def find_object(collection: list, attribute: str, value: str):
+        for obj in collection:
+            if str(getattr(obj, attribute)) == value:
+                return obj
+    # endregion
 
     @classmethod
     def __validate_age(cls, value):
@@ -34,3 +41,13 @@ class Employee(Person):
 
 p = Person("asd", 12)  # no error for age
 # e = Employee("test", 12, 34)  # ValueError: 12 must be between 16 and 150
+
+
+class NextIdMixin:
+    id = 0
+
+    @classmethod
+    def get_next_id(cls):
+        cls.id += 1
+
+        return cls.id

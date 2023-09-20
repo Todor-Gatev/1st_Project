@@ -1,4 +1,5 @@
 class NextIdMixin:
+    id = 0
 
     @classmethod
     def get_next_id(cls):

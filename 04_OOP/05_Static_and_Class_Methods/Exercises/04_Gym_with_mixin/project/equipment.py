@@ -16,3 +16,15 @@ class Equipment(NextIdMixin):
 
     def __repr__(self):
         return f"Equipment <{self.id}> {self.name}"
+
+
+# e1 = Equipment("eq1")
+# e2 = Equipment("eq2")
+# e3 = Equipment("eq3")
+#
+# print(e1)
+# print(e2)
+# print(e3)
+#
+# e1 = Equipment("eq1")
+# print(e1)
