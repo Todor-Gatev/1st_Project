@@ -1,6 +1,6 @@
 try:
     open('text.txt')
-    print("file found")
+    print("file found")  # result
 except FileNotFoundError:
     print("file not found")
 
@@ -8,4 +8,4 @@ try:
     open('text1.txt')
     print("file found")
 except FileNotFoundError:
-    print("file not found")
+    print("file not found")  # result
