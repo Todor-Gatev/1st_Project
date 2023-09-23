@@ -3,6 +3,8 @@ import os
 folder_path = input()
 data = []
 
+# TODO: Use recursion. Dido exercise Advanced January 2023
+
 for obj in os.listdir(folder_path):
     path = os.path.join(folder_path, obj)
     if os.path.isfile(path):

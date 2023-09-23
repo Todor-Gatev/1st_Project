@@ -1,11 +1,11 @@
 import os
 
-command = input()
+while True:
+    action, *info = input().split('-')
 
-while command != "End":
-    action, *info = command.split('-')
-
-    if action == "Create":
+    if action == "End":
+        break
+    elif action == "Create":
         with open(f'{info[0]}', 'w') as file:
             pass
     elif action == "Add":
@@ -27,4 +27,3 @@ while command != "End":
             os.remove(info[0])
         else:
             print("An error occurred")
-    command = input()
