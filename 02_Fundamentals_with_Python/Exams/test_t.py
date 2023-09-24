@@ -48,3 +48,10 @@ print(*path, sep="\n")
 # print(type(date[1]))
 # num_month = {"01": "January", "2": "February", "3": "March", "4": "April", "5": "May"}
 # print(num_month[date[1]])
+
+# print(isinstance('a', int))  # False
+# print(isinstance(5, int))  # True
+
+a = "12345"
+b = list(a)  # ['1', '2', '3', '4', '5']
+print(b)

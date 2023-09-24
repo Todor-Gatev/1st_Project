@@ -15,16 +15,16 @@ file_error_handling = open('recapitulate_error_handling.py')
 #     print(line, end="")
 #     # print(line)  # will add additional empty line after each line in file
 
-file = open('python.txt', 'w')  # Creates or open the file
-file.write("This is the write command.\n")
-file.write("It allows us to write in a particular file")
-file.close()
-
-file = open('python.txt', 'w')  # Creates or open the file.
-# If the file exists, its overwritten
-file.close()
-
-# file = open('python.txt', 'a')  # Creates or open the file
-# file.write("\nFile is reopened. New lines are added.\n")
-# file.write("If we use 'a' mode")
+# file = open('python.txt', 'w')  # Creates or open the existing file(make it empty blank)
+# file.write("This is the write command.\n")
+# file.write("It allows us to write in a particular file")
 # file.close()
+
+# file = open('python.txt', 'w')  # Creates or open the file.
+# # If the file exists, its overwritten
+# file.close()
+
+file = open('python.txt', 'a')  # Creates or open the file
+file.write("\nFile is reopened. New lines are added.\n")
+file.write("If we use 'a' mode")
+file.close()

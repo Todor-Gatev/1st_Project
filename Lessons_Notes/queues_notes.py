@@ -2,6 +2,9 @@ import time
 from datetime import datetime, timedelta
 from collections import deque
 
+deque_of_nums = deque([0, 1, 2, 3])
+print(deque_of_nums[2])
+
 x_time = "8:00:00"
 line_time = datetime.strptime(x_time, "%H:%M:%S")
 details = [x for x in range(10)]
@@ -49,5 +52,4 @@ start_time = time.time()
 # print(max_num)
 # print(max_num1)
 
-deque_of_strings = deque([0, 1, 2, 3])
-print(deque_of_strings[2])
+
