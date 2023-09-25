@@ -8,6 +8,7 @@ cars_passed = 0
 
 while True:
     command = input()
+
     if command == "END":
         break
 

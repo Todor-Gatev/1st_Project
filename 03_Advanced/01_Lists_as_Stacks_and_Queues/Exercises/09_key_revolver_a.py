@@ -8,9 +8,11 @@ value = int(input())
 
 while bullets:
     bullets_reloading = min(gun_barrel_size, len(bullets))
+
     for idx in range(bullets_reloading):
         bullet = bullets.pop()
         value -= price_of_bullet
+
         if bullet <= locks[0]:
             locks.popleft()
             print("Bang!")
