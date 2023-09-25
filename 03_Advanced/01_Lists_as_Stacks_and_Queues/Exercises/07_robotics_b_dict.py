@@ -7,6 +7,7 @@ items = deque()
 
 while True:
     command = input()
+
     if command == "End":
         break
 
@@ -15,6 +16,7 @@ while True:
 while items:
     line_time += timedelta(0, 1)
     is_waiting_item = True
+
     for name in robots_data:
         if robots_data[name][1] == 0 and is_waiting_item:
             item = items.popleft()

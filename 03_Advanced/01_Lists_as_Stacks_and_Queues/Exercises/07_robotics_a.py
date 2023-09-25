@@ -12,6 +12,7 @@ line_time = datetime.strptime(input(), "%H:%M:%S")
 
 while True:
     detail = input()
+
     if detail == "End":
         break
 
