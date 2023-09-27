@@ -5,11 +5,15 @@
 # nums = [1, 2]
 # my_tuple = (nums, 7, 9)  # tuple are immutable but variables are mutable
 # print(my_tuple)  # ([1, 2], 7, 9)
-# nums.append(3)  # change NUMS in tuple!!!
-# nums = [1, 2, 3]  # does not change NUMS in tuple!!!
+# nums.append(3)  # change NUMS in tuple!!! It will not work after redefining it in the next row
+# nums = [1, 2, 29]  # does not change NUMS in tuple!!! create new NUMS different from NUMS in tuple
 # print(my_tuple)  # ([1, 2, 3], 7, 9) -> variables inside the tuple are mutable
-# my_tuple[0][2] = 12
-# print(my_tuple)  # ([1, 2, 12], 7, 9) -> variables inside the tuple are mutable
+# my_tuple[0][2] = 12  # if we want to access NUMS in tuple again
+# my_tuple[0].append(43)  # if we want to access NUMS in tuple again
+# print(my_tuple)  # ([1, 2, 12, 43], 7, 9) -> variables inside the tuple are mutable
+# nums.append(23)  # [1, 2, 29, 23]
+# print(nums)  # [1, 2, 29, 23]
+# print(my_tuple)  # ([1, 2, 12, 43], 7, 9) -> variables inside the tuple are mutable
 
 # my_tuple = (1, 2, 3) <=> 1, 2, 3
 # my_tuple = 1, 2, 3 <=> (1, 2, 3)

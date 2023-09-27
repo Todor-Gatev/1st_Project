@@ -8,8 +8,10 @@ wasted_litters_of_water = 0
 
 while cups and bottles:
     cup = cups[0]
+
     while bottles:
         bottle = bottles.pop()
+
         if bottle >= cup:
             wasted_litters_of_water += bottle - cup
             cups.popleft()
