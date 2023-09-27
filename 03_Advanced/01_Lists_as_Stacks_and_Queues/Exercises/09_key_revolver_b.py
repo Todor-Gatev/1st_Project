@@ -13,6 +13,7 @@ while bullets and locks:
     left_bullets_in_barrel -= 1
     bullet = bullets.pop()
     money_earned -= bullet_price
+
     if bullet <= locks[0]:
         locks.popleft()
         print("Bang!")
