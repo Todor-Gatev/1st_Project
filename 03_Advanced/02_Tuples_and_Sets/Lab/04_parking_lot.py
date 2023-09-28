@@ -2,6 +2,7 @@ cars = set()
 
 for _ in range(int(input())):
     action, number = input().split(", ")
+
     if action == "IN":
         cars.add(number)
     elif action == "OUT":
