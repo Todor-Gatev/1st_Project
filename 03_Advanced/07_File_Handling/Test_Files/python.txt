@@ -1,0 +1,8 @@
+This is the write command.
+It allows us to write in a particular file
+File is reopened. New lines are added.
+If we use 'a' mode
+File is reopened. New lines are added.
+If we use 'a' mode
+File is reopened. New lines are added.
+If we use 'a' mode
