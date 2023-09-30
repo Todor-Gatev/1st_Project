@@ -1,5 +1,5 @@
-set1 = set(input().split())
-set2 = set(input().split())
+set1 = set(map(int, input().split()))
+set2 = set(map(int, input().split()))
 
 map_func = {
     "Add First": lambda x: set1.update(x),
@@ -12,8 +12,7 @@ map_func = {
 
 for _ in range(int(input())):
     action1, action2, *info = input().split()
-
-    map_func[action1 + ' ' + action2](info)
+    map_func[action1 + ' ' + action2](map(int, info))
 
 print(*sorted(set1), sep=", ")
 print(*sorted(set2), sep=", ")
