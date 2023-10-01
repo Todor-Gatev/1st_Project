@@ -1,16 +1,16 @@
 from collections import deque
 
 deque_of_strings = deque(input().split())
+
 colors = {"red", "yellow", "blue", "orange", "purple", "green"}
 main_colors = {"red", "yellow", "blue"}
 slave_colors = {"orange", "purple", "green"}
-found_colors = []
-
 map_colors = {
     "orange": {"red", "yellow"},
     "purple": {"red", "blue"},
     "green": {"blue", "yellow"}
 }
+found_colors = []
 
 while deque_of_strings:
     str1 = deque_of_strings.popleft()
