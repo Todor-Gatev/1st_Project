@@ -1,5 +1,5 @@
 # TODO: Use recursion.
-#  exercise 03_Advanced/07_File_Handling/Exercises/04-Directory-Traversal_a
+#  exercise 03_Advanced/07_File_Handling/Exercises_1/04-Directory-Traversal_a
 #  Dido video Advanced January 2023
 #
 # def recursive_power(num, power):
