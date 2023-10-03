@@ -1,2 +1,3 @@
-# matrix = [[0 for j in range(2)] for i in range(3)]
-# print(matrix)
+matrix = [[int(x) for x in input().split(", ") if int(x) % 2 == 0] for _ in range(int(input()))]
+
+print(matrix)
