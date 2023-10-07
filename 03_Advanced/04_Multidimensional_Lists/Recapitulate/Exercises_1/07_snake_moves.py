@@ -11,7 +11,16 @@ for row in range(rows):
     if row % 2 == 0:
         print(*[chars.popleft() for _ in range(columns)], sep='')
     else:
-        print(*[chars.popleft() for _ in range(columns)][::-1], sep='')
+        # slower solution
+        # print(*[chars.popleft() for _ in range(columns)][::-1], sep='')
+
+        # faster solution
+        result = deque()
+
+        for _ in range(columns):
+            result.appendleft(chars.popleft())
+
+        print(*result, sep='')
 
 # solution 2
 # rows, cols = [int(x) for x in input().split()]
