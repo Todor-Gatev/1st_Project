@@ -19,6 +19,9 @@ for row in range(rows):
 [print(f"{''.join(matrix[row])}") for row in range(rows)]
 
 # solution 2
+# from collections import deque
+
+# rows, columns = [int(x) for x in input().split()]
 # snake = list(input())
 # chars = deque(snake)
 #

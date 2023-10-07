@@ -1,5 +1,4 @@
 rows, columns = [int(x) for x in input().split()]
-
 matrix = [[int(x) for x in input().split()] for _ in range(rows)]
 
 max_sum = float('-inf')
