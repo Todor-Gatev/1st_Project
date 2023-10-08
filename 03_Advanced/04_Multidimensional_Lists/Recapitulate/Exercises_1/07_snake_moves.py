@@ -21,7 +21,7 @@ for row in range(rows):
             result.appendleft(chars.popleft())
 
         print(*result, sep='')
-
+        # print(*deque(appendleft(chars.popleft()) for _ in range(columns)))
 # solution 2
 # rows, cols = [int(x) for x in input().split()]
 # snake = input()
