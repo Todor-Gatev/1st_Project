@@ -1,4 +1,3 @@
-
 IMPACT_RANGE = 1
 
 n = int(input())
