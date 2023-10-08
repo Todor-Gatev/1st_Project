@@ -45,22 +45,35 @@
 # x = txt.casefold()  # stronger than lower()
 # x = txt.lower()
 # x = txt.count('l', 3, 19)  # string.count(value, start, end)
+# x = "welcome".find("com")  # 3 string.find(value, start, end)
 # x = "bob".center(10, '@')  # @@@bob@@@@
 # x = txt.encode()  # string.encode(encoding=encoding, errors=errors)
 # x = txt.endswith("my world.", 5, 11)  # True or False
-# print("H\te\tl\tl\to".expandtabs(3))
-# x = "welcome".find("com")  # 3 string.find(value, start, end)
-# str_1 = "teststring12"
-# x = str_1.isalnum()  # True
-# y = str_1.isalpha()  # False
-# z = str_1.isdigit()  # False Exponents, like ², are also considered to be a digit
-# a = '-1'.isdecimal()  # False 0-9
-# b = '3/4'.isnumeric()  # False
-# b = '¾'.isnumeric()      # True 0-9 like ² and ¾
-
+# print("H\te\tl\tl\to".expandtabs(3)) # H  e  l  l  o
+# print("H\te\tl\tl\to".expandtabs(5)) # H    e    l    l    o
 # x = "welcome".isascii()  # True
 # x = "wow_83".isidentifier()  # True
 # x = "lo!\nAre".isprintable()  # False
+
+# print(isinstance(11, float))  # False
+# print(isinstance(11.0, int))  # False
+# print(isinstance(11, float) or isinstance(11, int))  # True
+# print(isinstance(11.0, float) or isinstance(11.0, int))  # True
+# str_1 = "teststring12"
+# x = str_1.isalnum()  # True - "alnum" - alpha numeric
+# y = str_1.isalpha()  # False
+# z = str_1.isdigit() # False Exponents, like ², are also considered to be a digit
+# a = '-1'.isdecimal()   # False 0-9
+# b = '3/4'.isnumeric()  # False
+# c = '¾'.isnumeric()    # True 0-9 like ² and ¾
+# d = "0.7"
+# print('0.7'.isnumeric())  # False
+# print("0.7".isdigit())  # False
+# print(isinstance("0.7", float))  # False
+# print(isinstance(0.7, float))  # True
+# print(d.isnumeric())  # False – AttributeError if d=0.7 instead “0.7”
+# print(d.isdigit())  # False – AttributeError if d=0.7 instead “0.7”
+# print(isinstance(d, float))  # False
 
 
 x = "ac"
