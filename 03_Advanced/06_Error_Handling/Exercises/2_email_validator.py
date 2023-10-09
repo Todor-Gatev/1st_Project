@@ -21,7 +21,6 @@ regex_domain = re.compile(r'\.[a-z]+')
 email = input()
 
 while email != "End":
-
     if "@" not in email or email.count("@") > 1:
         raise MustContainAtSymbolError("Email should contain exactly one @ symbol!")
     if len(email.split("@")[0]) < MIN_LENGTH:
