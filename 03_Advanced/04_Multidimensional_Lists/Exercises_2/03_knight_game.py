@@ -10,7 +10,7 @@ def find_knights(board_f):
 
 
 def get_knight_range(knight_f):
-    x, y = knight_f[0], knight_f[1]
+    x, y = knight_f
     return {(x + dx, y + dy)
             for h, v in [(1, 2), (2, 1)]  # range
             for dx, dy in [(h, v), (h, -v), (-h, v), (-h, -v)]}  # directions
