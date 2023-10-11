@@ -9,3 +9,7 @@
 # orders = list("abcdf")
 # print("Orders left:", *orders, "end", '.')
 
+# knight_attacks = len({(i + di, j + dj) for di, dj in positions if (i + di, j + dj) in knights})
+# knight_attacks = len({(i + di, j + dj) for di, dj in positions}.intersection(knights))
+# faster than the upper row due to intersection.
+# intersection is faster than if !!!
