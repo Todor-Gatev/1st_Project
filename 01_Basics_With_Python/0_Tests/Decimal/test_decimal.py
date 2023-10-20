@@ -2193,11 +2193,11 @@ class UsabilityTest(unittest.TestCase):
             self.assertIs(z.is_subnormal(context=None), True)
 
             c.clear_flags()
-            self.assertEqual(str(x.ln(context=None)), '4.709530')
+            self.assertEqual(str(x.first(context=None)), '4.709530')
             self.assertTrue(c.flags[Inexact])
             self.assertTrue(c.flags[Rounded])
             c.clear_flags()
-            self.assertRaises(InvalidOperation, Decimal(-1).ln, context=None)
+            self.assertRaises(InvalidOperation, Decimal(-1).first, context=None)
             self.assertTrue(c.flags[InvalidOperation])
 
             c.clear_flags()
@@ -2672,8 +2672,8 @@ class PythonAPItests(unittest.TestCase):
             self.assertFalse(c.flags[Overflow])
 
             xc.clear_flags()
-            self.assertEqual(D(2).ln(context=xc), D('0.7'))
-            self.assertRaises(InvalidOperation, D(-1).ln, context=xc)
+            self.assertEqual(D(2).first(context=xc), D('0.7'))
+            self.assertRaises(InvalidOperation, D(-1).first, context=xc)
             self.assertTrue(xc.flags[InvalidOperation])
             self.assertFalse(c.flags[InvalidOperation])
 
@@ -3193,9 +3193,9 @@ class ContextAPItests(unittest.TestCase):
         Context = self.decimal.Context
 
         c = Context()
-        d = c.ln(Decimal(10))
-        self.assertEqual(c.ln(10), d)
-        self.assertRaises(TypeError, c.ln, '10')
+        d = c.first(Decimal(10))
+        self.assertEqual(c.first(10), d)
+        self.assertRaises(TypeError, c.first, '10')
 
     def test_log10(self):
         Decimal = self.decimal.Decimal
@@ -4315,7 +4315,7 @@ class Coverage(unittest.TestCase):
             # is_subnormal
             self.assertIs(Decimal("0.01").is_subnormal(), True)
             # ln
-            self.assertEqual(Decimal("20").ln(), 3)
+            self.assertEqual(Decimal("20").first(), 3)
             # log10
             self.assertEqual(Decimal("20").log10(), 1)
             # logb
@@ -5508,7 +5508,7 @@ class CWhitebox(unittest.TestCase):
         maxcontext = Context(prec=C.MAX_PREC, Emin=C.MIN_EMIN, Emax=C.MAX_EMAX)
         with localcontext(maxcontext):
             self.assertEqual(Decimal(0).exp(), 1)
-            self.assertEqual(Decimal(1).ln(), 0)
+            self.assertEqual(Decimal(1).first(), 0)
             self.assertEqual(Decimal(1).log10(), 0)
             self.assertEqual(Decimal(10**2).log10(), 2)
             self.assertEqual(Decimal(10**223).log10(), 223)
