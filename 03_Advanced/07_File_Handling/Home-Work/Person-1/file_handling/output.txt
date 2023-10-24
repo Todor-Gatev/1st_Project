@@ -1,0 +1,12 @@
+.docx
+- - - 06-File-Handling-Exercise.docx
+- - - ~$-File-Handling-Exercise.docx
+.py
+- - - 04_dir_traversal.py
+- - - 01_even_lines.py
+- - - 03_file_manipulator.py
+- - - 02_line_numbers.py
+.txt
+- - - text.txt
+- - - output.txt
+- - - text.txt
