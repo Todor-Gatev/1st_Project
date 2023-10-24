@@ -1,13 +1,13 @@
-# class Person:
-#     def __init__(self, name: str, age: int):
-#         self.__name = name
-#         self.__age = age  # _Person__age
-#
-#
-# p = Person("Tom", 23)
-#
-# # print(p.__age)  # AttributeError: 'Person' object has no attribute '__age'
-# print(p._Person__age)  # 23
+class Person:
+    def __init__(self, name: str, age: int):
+        self.__name = name
+        self.__age = age  # _Person__age
+
+
+p = Person("Tom", 23)
+
+print(p.__age)  # AttributeError: 'Person' object has no attribute '__age'
+print(p._Person__age)  # 23
 #
 # p.__age = 47  # creates different instance variable than the one in "def __init__" =>  _Person__age
 # print(p.__age)  # 47
@@ -49,16 +49,16 @@
 # print(b.age)
 
 
-class Person:
-    def __init__(self, age=0):
-        self.age = age
-
-
-person = Person(12)
-print(getattr(person, "age"))  # 12
-# print(getattr(person, "name"))  # AttributeError: 'Person' object has no attribute 'name'
-print(getattr(person, "name", "asd"))  # asd (if no such attr return "asd")
-print(getattr(person, "age", "asd"))  # 12
+# class Person:
+#     def __init__(self, age=0):
+#         self.age = age
+#
+#
+# person = Person(12)
+# print(getattr(person, "age"))  # 12
+# # print(getattr(person, "name"))  # AttributeError: 'Person' object has no attribute 'name'
+# print(getattr(person, "name", "asd"))  # asd (if no such attr return "asd")
+# print(getattr(person, "age", "asd"))  # 12
 
 # class Person:
 #     def __init__(self, age=0):

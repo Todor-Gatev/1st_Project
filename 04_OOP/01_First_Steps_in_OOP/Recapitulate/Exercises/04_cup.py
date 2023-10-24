@@ -2,15 +2,17 @@ class Cup:
     def __init__(self, size: int, quantity: int):
         self.size = size
         self.quantity = quantity
-    
-    @property
-    def size(self):
 
-        return
+    def fill(self, quantity: int):
+        if quantity + self.quantity <= self.size:
+            self.quantity += quantity
 
-    @size.setter
-    def size(self, value):
-        pass
+    def status(self):
+        return self.size - self.quantity
 
-    
-    # def fill(self):
+
+cup = Cup(100, 50)
+print(cup.status())
+cup.fill(40)
+cup.fill(20)
+print(cup.status())
