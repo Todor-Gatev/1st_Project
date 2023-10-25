@@ -34,6 +34,7 @@ class PizzaDelivery:
     def make_order(self):
         self.ordered = True
         ingredients_list = ", ".join([f"{ingredient}: {qty}" for ingredient, qty in self.ingredients.items()])
+
         return (f"You've ordered pizza {self.name} prepared with "
                 f"{ingredients_list} and the price will be {self.price}lv.")
 
