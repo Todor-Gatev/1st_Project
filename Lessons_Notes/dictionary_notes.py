@@ -1,6 +1,8 @@
 from collections import defaultdict
 # from collections import OrderedDict
-
+d_test = {'a': [1, 2, 3], 'b': [4, 5, 6]}
+d_test['c'] = d_test.pop('a')  # {'b': [4, 5, 6], 'c': [1, 2, 3]}
+print(d_test)
 # student_info = defaultdict(list)
 # # student_info = defaultdict(lambda: [0.0])
 # for _ in range(int(input())):
