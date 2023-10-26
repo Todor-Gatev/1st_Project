@@ -2,10 +2,10 @@ from typing import List
 
 
 class EmailValidator(object):
-    def __init__(self, min_length: int, mails: list, domains: list) -> None:
+    def __init__(self, min_length: int, mails_list: list, domains_list: list) -> None:
         self.min_length = min_length
-        self.mails: List[str] = mails
-        self.domains: List[str] = domains
+        self.mails: List[str] = mails_list
+        self.domains: List[str] = domains_list
 
     def __is_name_valid(self, name: str) -> bool:
         return len(name) >= self.min_length

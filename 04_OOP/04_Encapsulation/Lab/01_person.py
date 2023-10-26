@@ -10,9 +10,11 @@ class Person:
         return self.__age
 
 
-# person = Person("George", 32)
-# print(person.get_name())
-# print(person.get_age())
-# person.age = 37
-# print(person.get_age())
-# print(person.age())
+person = Person("George", 32)
+print(person.get_name())
+print(person.get_age())  # 32
+person.age = 37  # person.age is variable in that case
+print(person.get_age())  # 32
+print(person.age)  # <class 'int'>
+print(type(person.age))  # 37 - person.age is variable in that case
+print(person.age())  # TypeError: 'int' object is not callable
