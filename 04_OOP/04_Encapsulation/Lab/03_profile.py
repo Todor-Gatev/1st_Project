@@ -45,7 +45,7 @@ class Profile:
 
 # profile_with_invalid_password = Profile('My_username', 'My-password')
 #
-# profile_with_invalid_username = Profile('Too_long_username', 'Any')
+profile_with_invalid_username = Profile('Too_long_username', 'Any')
 
 # correct_profile = Profile("Username", "Passw0rd")
 # print(correct_profile)
@@ -53,5 +53,5 @@ class Profile:
 # wrong_username = Profile("User", "Passw0rd")
 # print(wrong_username)
 
-wrong_password = Profile("Usernmasdfa", "Pas")
-print(wrong_password)
+# wrong_password = Profile("Usernmasdfa", "Pas")
+# print(wrong_password)
