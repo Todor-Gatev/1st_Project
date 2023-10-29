@@ -69,5 +69,32 @@ class Zoo:
         self.__budget += amount
 
     def animals_status(self) -> str:
-        result = f"You have {len(self.animals)} animals"
-        return result
+        info = {"Lion": [], "Tiger": [], "Cheetah": []}
+        [info[a.__class__.__name__].append(str(a)) for a in self.animals]
+        result = [
+            f"You have {len(self.animals)} animals",
+            f"----- {len(info['Lion'])} Lions:",
+            *info["Lion"],
+            f"----- {len(info['Tiger'])} Tigers:",
+            *info["Tiger"],
+            f"----- {len(info['Cheetah'])} Cheetahs:",
+            *info["Cheetah"]
+        ]
+
+        return "\n".join(result)
+
+    def workers_status(self):
+        info = {"Keeper": [], "Caretaker": [], "Vet": []}
+        [info[w.__class__.__name__].append(str(w)) for w in self.workers]
+        result = [
+            f"You have {len(self.workers)} workers",
+            f"----- {len(info['Keeper'])} Keepers:",
+            *info["Keeper"],
+            f"----- {len(info['Caretaker'])} Caretakers:",
+            *info["Caretaker"],
+            f"----- {len(info['Vet'])} Vets:",
+            *info["Vet"]
+        ]
+
+        return "\n".join(result)
+
