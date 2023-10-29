@@ -20,8 +20,6 @@ print(type(person.age))  # 37 - person.age is variable in that case
 # print(person.age())  # TypeError: 'int' object is not callable
 
 
-
-
 # class Person:
 #     def __init__(self, name: str, age: int):
 #         self.__name = name
@@ -91,10 +89,10 @@ print(type(person.age))  # 37 - person.age is variable in that case
 #     def __getattr__(self, item):
 #         return "not .... blabla"
 #
-#     """__getattribute__ gets called “first”(the highest priority),
-#      whether or not there's the attribute.
-#       __getattr__ gets called “last”(the lowest priority),
-#        if Python cannot find the attribute"""
+    # """__getattribute__ gets called “first”(the highest priority),
+    #  whether or not there's the attribute.
+    #   __getattr__ gets called “last”(the lowest priority),
+    #    if Python cannot find the attribute"""
 
 #
 # person = Person(12)
