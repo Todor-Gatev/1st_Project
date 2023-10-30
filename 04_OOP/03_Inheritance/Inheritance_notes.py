@@ -23,14 +23,18 @@ print(C.__mro__)  # (<class '__main__.C'>, <class '__main__.A'>, <class '__main_
 # endregion
 
 # region Mixins, class NextIdMixin:, class RadioMixin:
-# class NextIdMixin:
-#     id = 0
-#
-#     @classmethod
-#     def get_next_id(cls):
-#         cls.id += 1
-#
-#         return cls.id
+class NextIdMixin:
+    id = 0
+
+    @classmethod
+    def get_next_id(cls):
+        cls.id += 1
+
+        return cls.id
+class Customer(NextIdMixin):
+    id = 0
+    def __init__(self, name: str, address: str, email: str):
+        self.id = self.get_next_id()
 # endregion
 
 # region super
