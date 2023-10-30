@@ -1,7 +1,7 @@
 from calendar import month_name
 
 
-class Dvd:
+class DVD:
     def __init__(self, name: str, id_num: int, creation_year: int, creation_month: str, age_restriction: int):
         self.name = name
         self.id = id_num
