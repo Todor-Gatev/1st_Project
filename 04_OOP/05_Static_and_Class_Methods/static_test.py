@@ -18,8 +18,3 @@
 # y[1].append(5)  # [[], [5], []]
 # print(y)
 
-a = 4 / 2
-print(a)
-a = 5 // 2
-print(a)
-print(type(a))
