@@ -189,7 +189,7 @@ class Animal(ABC):
     @abstractmethod
     def sound(self):
         # raise NotImplementedError("Subclass must implement")
-        pass
+        ...
 
 
 class Dog(Animal):
