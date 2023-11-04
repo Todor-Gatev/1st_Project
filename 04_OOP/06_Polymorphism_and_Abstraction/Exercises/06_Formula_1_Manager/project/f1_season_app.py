@@ -13,7 +13,7 @@ class F1SeasonApp:
         elif team_name == "Red Bull":
             self.red_bull_team = RedBullTeam(budget)
         else:
-            raise ValueError("Invalid team name!")
+            raise ValueError("Invalid teams name!")
 
         return f"{team_name} has joined the new F1 season."
 
