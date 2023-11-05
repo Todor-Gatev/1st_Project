@@ -7,8 +7,8 @@
 # current_time = datetime.strptime(input_time, "%Y:%H:%M:%S:%d")
 # current_time += timedelta(seconds=7)
 # # class datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)
-# print(current_time.strftime("p[%H:%M:%S{q"))  # p[08:00:07{q
-# print(current_time.strftime("%H:%M:%S-(%d/%Y)"))  # 08:00:07-(17/2023) - Month is omitted
+# print(current_time.strftime("p[%H:%M:%S{q"))  # p[08:00:07-{q
+# print(current_time.strftime("%H:%M:%S-(%d/%Y)"))  # 08:00:07--(17/2023) - Month is omitted
 
 # endregion
 
