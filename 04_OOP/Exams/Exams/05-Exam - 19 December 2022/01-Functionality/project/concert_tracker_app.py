@@ -1,9 +1,6 @@
-from typing import List
-
 from project.band import Band
 from project.band_members.drummer import Drummer
 from project.band_members.guitarist import Guitarist
-from project.band_members.musician import Musician
 from project.band_members.singer import Singer
 from project.concert import Concert
 
@@ -23,9 +20,9 @@ class ConcertTrackerApp:
     }
 
     def __init__(self):
-        self.bands: List[Band] = []
-        self.musicians: List[Musician] = []
-        self.concerts: List[Concert] = []
+        self.bands = []
+        self.musicians = []
+        self.concerts = []
 
     def create_musician(self, musician_type: str, name: str, age: int):
         if musician_type not in self.MUSICIAN_TYPES:
