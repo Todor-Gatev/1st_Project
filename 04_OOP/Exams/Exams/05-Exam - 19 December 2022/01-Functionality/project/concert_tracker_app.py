@@ -8,15 +8,15 @@ from project.concert import Concert
 class ConcertTrackerApp:
     MUSICIAN_TYPES = {"Guitarist": Guitarist, "Drummer": Drummer, "Singer": Singer}
     CONCERT_GENRE = {
-        "Rock": {"Drummer": "play the drums with drumsticks",
-                 "Singer": "sing high pitch notes",
-                 "Guitarist": "play rock"},
-        "Metal": {"Drummer": "play the drums with drumsticks",
-                  "Singer": "sing low pitch notes",
-                  "Guitarist": "play metal"},
-        "Jazz": {"Drummer": "play the drums with drum brushes",
-                 "Singer": "sing high pitch notes and sing low pitch notes",
-                 "Guitarist": "play jazz"}
+        "Rock": {"Drummer": ["play the drums with drumsticks"],
+                 "Singer": ["sing high pitch notes"],
+                 "Guitarist": ["play rock"]},
+        "Metal": {"Drummer": ["play the drums with drumsticks"],
+                  "Singer": ["sing low pitch notes"],
+                  "Guitarist": ["play metal"]},
+        "Jazz": {"Drummer": ["play the drums with drum brushes"],
+                 "Singer": ["sing high pitch notes", "sing low pitch notes"],
+                 "Guitarist": ["play jazz"]}
     }
 
     def __init__(self):
@@ -40,7 +40,6 @@ class ConcertTrackerApp:
             raise Exception(f"{name} band is already created!")
 
         self.bands.append(Band(name))
-
         return f"{name} was created."
 
     def create_concert(self, genre: str, audience: int, ticket_price: float, expenses: float, place: str):
@@ -63,7 +62,8 @@ class ConcertTrackerApp:
         if not band:
             raise Exception(f"{band_name} isn't a band!")
 
-        band.members.append(musician)
+        if musician not in band.members:
+            band.members.append(musician)
 
         return f"{musician_name} was added to {band_name}."
 
@@ -92,10 +92,11 @@ class ConcertTrackerApp:
         band_needed_skills_for_concert = self.CONCERT_GENRE[concert.genre]
 
         for member in band.members:
-            member_needed_skills = band_needed_skills_for_concert[member.MUSICIAN_TYPE]
+            member_needed_skills = band_needed_skills_for_concert[member.__class__.__name__]
 
-            if member_needed_skills not in member.skills:
-                raise Exception(f"The {band_name} band is not ready to play at the concert!")
+            for member_needed_skill in member_needed_skills:
+                if member_needed_skill not in member.skills:
+                    raise Exception(f"The {band_name} band is not ready to play at the concert!")
 
         profit = (concert.audience * concert.ticket_price) - concert.expenses
 
@@ -107,7 +108,7 @@ class ConcertTrackerApp:
         musician_types = set()
 
         for member in band.members:
-            musician_types.add(member.MUSICIAN_TYPE)
+            musician_types.add(member.__class__.__name__)
 
             if len(musician_types) == len(self.MUSICIAN_TYPES):
                 return True

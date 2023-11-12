@@ -14,7 +14,7 @@ class Meal(ABC):
 
     @name.setter
     def name(self, value):
-        if not value.strip():
+        if value == "":
             raise ValueError("Name cannot be an empty string!")
 
         self.__name = value
