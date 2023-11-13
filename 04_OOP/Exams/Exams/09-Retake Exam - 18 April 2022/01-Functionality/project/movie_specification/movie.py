@@ -19,7 +19,7 @@ class Movie(ABC):
 
     @title.setter
     def title(self, value):
-        if not value.strip():
+        if value == "":
             raise ValueError("The title cannot be empty string!")
 
         self.__title = value
