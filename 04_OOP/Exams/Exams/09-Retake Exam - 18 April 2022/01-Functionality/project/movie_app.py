@@ -1,6 +1,3 @@
-from typing import List
-
-
 from project.user import User
 
 
@@ -8,7 +5,7 @@ class MovieApp:
     def __init__(self):
         self.movies_collection = []
         # self.movies_collection: List[Movie] = []
-        self.users_collection: List[User] = []
+        self.users_collection = []
 
     def register_user(self, username: str, age: int):
         if self.find_object(self.users_collection, "username", username):
@@ -24,7 +21,7 @@ class MovieApp:
         if not user:
             raise Exception("This user does not exist!")
 
-        if movie.owner != user:
+        if not movie.owner == user:
             raise Exception(f"{username} is not the owner of the movie {movie.title}!")
 
         if movie in self.movies_collection:
@@ -41,7 +38,7 @@ class MovieApp:
         if movie not in self.movies_collection:
             raise Exception(f"The movie {movie.title} is not uploaded!")
 
-        if movie.owner != user:
+        if not movie.owner == user:
             raise Exception(f"{username} is not the owner of the movie {movie.title}!")
 
         for attr, value in kwargs.items():

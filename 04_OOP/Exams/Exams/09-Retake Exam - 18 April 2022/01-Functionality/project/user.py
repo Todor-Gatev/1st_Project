@@ -17,7 +17,7 @@ class User:
 
     @username.setter
     def username(self, value):
-        if not value.strip():
+        if value == "":
             raise ValueError("Invalid username!")
 
         self.__username = value
