@@ -1,8 +1,7 @@
 def logged(function):
     def wrapper(*args, **kwargs):
         return (f"you called {function.__name__}{args}\n"
-                f"it returned {function(*args)}\n"
-                f"{args}")
+                f"it returned {function(*args)}")
 
     return wrapper
 

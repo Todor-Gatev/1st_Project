@@ -1,6 +1,12 @@
 def even_parameters(function):
     def wrapper(*args, **kwargs):
-        pass
+        for arg in args:
+            if isinstance(arg, int):
+                if arg % 2 == 0:
+                    continue
+
+            return "Please use only even numbers!"
+        return function(*args)
 
     return wrapper
 
