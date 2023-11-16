@@ -17,7 +17,8 @@ if __name__ == '__main__':
 
 # region Error
 # Traceback (most recent call last):
-#   File "C:\Users\Happy\AppData\Local\Programs\PyCharm Community\plugins\python-ce\helpers\pycharm\_jb_unittest_runner.py", line 38, in <module>
+#   File "C:\Users\Happy\AppData\Local\Programs\PyCharm Community\plugins
+#   \python-ce\helpers\pycharm\_jb_unittest_runner.py", line 38, in <module>
 #     sys.exit(main(argv=args, module=None, testRunner=unittestpy.TeamcityTestRunner,
 # car = Car("a", "b", 1, 4) - remove
 # car.make = ""- remove
