@@ -4,7 +4,7 @@ class User:
         self.last_name = last_name
         self.driving_license_number = driving_license_number
         self.rating: float = 0
-        self.is_blocked: bool = False
+        self.is_blocked = False
 
     # region getters and setters
     @property
@@ -26,7 +26,6 @@ class User:
     def last_name(self, value):
         if not value.strip():
             raise ValueError("Last name cannot be empty!")
-
         self.__last_name = value
 
     @property
@@ -50,14 +49,11 @@ class User:
             raise ValueError("Users rating cannot be negative!")
 
         self.__rating = value
+
     # endregion
 
     def increase_rating(self):
-        self.rating = min(10, self.rating + 0.5)
-        # if self.rating + 0.5 > 10:
-        #     self.rating = 10
-        # else:
-        #     self.rating += 0.5
+        self.rating = min(self.rating + 0.5, 10)
 
     def decrease_rating(self):
         if self.rating - 2 < 0:
@@ -68,4 +64,5 @@ class User:
 
     def __str__(self):
         return (f"{self.first_name} {self.last_name} "
-                f"Driving license: {self.driving_license_number} Rating: {self.rating}")
+                f"Driving license: {self.driving_license_number} "
+                f"Rating: {self.rating}")
