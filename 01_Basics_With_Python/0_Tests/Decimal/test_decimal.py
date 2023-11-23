@@ -32,11 +32,11 @@ import pickle, copy
 import unittest
 import numbers
 import locale
-from test.support import (run_unittest, run_doctest, is_resource_enabled,
-                          requires_IEEE_754, requires_docstrings)
-from test.support import (import_fresh_module, TestFailed,
-                          run_with_locale, cpython_only,
-                          darwin_malloc_err_warning)
+from test1.support import (run_unittest, run_doctest, is_resource_enabled,
+                           requires_IEEE_754, requires_docstrings)
+from test1.support import (import_fresh_module, TestFailed,
+                           run_with_locale, cpython_only,
+                           darwin_malloc_err_warning)
 import random
 import inspect
 import threading
