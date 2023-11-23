@@ -69,6 +69,7 @@ class ConcertTrackerApp:
 
     def remove_musician_from_band(self, musician_name: str, band_name: str):
         band = self.find_object(self.bands, "name", band_name)
+        # musician = self.find_object(band.members, "name", musician_name)
 
         if not band:
             raise Exception(f"{band_name} isn't a band!")

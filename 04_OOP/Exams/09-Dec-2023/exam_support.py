@@ -22,7 +22,7 @@ class A:
 #     def setUp(self) -> None:
 #         self.
 #
-#     def test_default_consumption_class_attribute_is_correct(self):
+#     def test_default_class_attribute_is_correct(self):
 #         self.assertEqual(1.25, Vehicle.DEFAULT_FUEL_CONSUMPTION)
 #
 #     def test_correct_initialization(self):

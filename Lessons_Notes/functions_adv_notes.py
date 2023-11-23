@@ -13,13 +13,14 @@
 # sum_nums(3, 7, 12, 19)
 #
 #
-# def sum_values(a, **kwargs):  # **kwargs -> dict with 0 or more ele-> a: 3  kwargs: {'b': 7, 'c': 12}
-#     print(a)
-#     print(kwargs)
-#
-#
-# sum_values(3, b=7, c=12)
-# sum_values(a=3)
+def test_kwargs(a, **kwargs):  # **kwargs -> dict with 0 or more ele-> a: 3  kwargs: {'b': 7, 'c': 12}
+    print(a)
+    print(kwargs)
+
+my_dic = {'b': 7, 'c': 12}
+test_kwargs(3, **my_dic)
+test_kwargs(3, b=7, c=12)
+test_kwargs(a=3)
 #
 # print(**{"name": "George", "town": "Sofia", "age": 20})  # error
 # print(*[1, 2, 3])  # OK
