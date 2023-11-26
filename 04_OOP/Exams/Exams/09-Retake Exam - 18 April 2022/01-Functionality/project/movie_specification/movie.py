@@ -1,15 +1,12 @@
 from abc import ABC, abstractmethod
 
-# from project.user import User
-
 
 class Movie(ABC):
     def __init__(self, title: str, year: int, owner: object, age_restriction: int):
         self.title = title
         self.year = year
-        # self.owner: User = owner
-        self.owner = owner
-        self.age_restriction = age_restriction
+        self.owner = owner  # User
+        self.age = age_restriction
         self.likes: int = 0
 
     # region getters and setters
@@ -19,9 +16,8 @@ class Movie(ABC):
 
     @title.setter
     def title(self, value):
-        if value == "":
+        if not value:
             raise ValueError("The title cannot be empty string!")
-
         self.__title = value
 
     @property
@@ -41,10 +37,19 @@ class Movie(ABC):
 
     @owner.setter
     def owner(self, value):
-        if type(value).__name__ != "User":
+        if value.__class__.__name__ is not "User":
             raise ValueError("The owner must be an object of type User!")
 
         self.__owner = value
+
+    @property
+    @abstractmethod
+    def age_restriction(self):
+        ...
+
+    @age_restriction.setter
+    def age_restriction(self, value):
+        ...
 
     # endregion
 
