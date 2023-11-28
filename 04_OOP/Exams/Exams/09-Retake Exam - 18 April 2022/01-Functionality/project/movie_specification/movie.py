@@ -6,7 +6,7 @@ class Movie(ABC):
         self.title = title
         self.year = year
         self.owner = owner  # User
-        self.age = age_restriction
+        self.age_restriction = age_restriction
         self.likes: int = 0
 
     # region getters and setters
@@ -37,7 +37,7 @@ class Movie(ABC):
 
     @owner.setter
     def owner(self, value):
-        if value.__class__.__name__ is not "User":
+        if not value.__class__.__name__ == "User":
             raise ValueError("The owner must be an object of type User!")
 
         self.__owner = value
