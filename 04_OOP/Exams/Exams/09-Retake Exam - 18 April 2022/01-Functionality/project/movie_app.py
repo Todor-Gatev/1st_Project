@@ -14,7 +14,7 @@ class MovieApp:
     @staticmethod
     def __is_movie_owned_by_user(movie, user):
         if movie.owner is not user:
-            raise Exception(f"{user.username} is not the owner of the")
+            raise Exception(f"{user.username} is not the owner of the movie {movie.title}!")
 
     # endregion
 
