@@ -5,9 +5,9 @@ class Movie(ABC):
     def __init__(self, title: str, year: int, owner: object, age_restriction: int):
         self.title = title
         self.year = year
-        self.owner = owner  # User
+        self.owner = owner
         self.age_restriction = age_restriction
-        self.likes: int = 0
+        self.likes = 0
 
     # region getters and setters
     @property
@@ -16,7 +16,7 @@ class Movie(ABC):
 
     @title.setter
     def title(self, value):
-        if not value:
+        if value == '':
             raise ValueError("The title cannot be empty string!")
         self.__title = value
 
@@ -28,7 +28,6 @@ class Movie(ABC):
     def year(self, value):
         if value < 1888:
             raise ValueError("Movies weren't made before 1888!")
-
         self.__year = value
 
     @property
@@ -39,18 +38,17 @@ class Movie(ABC):
     def owner(self, value):
         if not value.__class__.__name__ == "User":
             raise ValueError("The owner must be an object of type User!")
-
         self.__owner = value
 
     @property
-    @abstractmethod
-    def age_restriction(self):
-        ...
+    def likes(self):
+        return self.__likes
 
-    @age_restriction.setter
-    def age_restriction(self, value):
-        ...
-
+    @likes.setter
+    def likes(self, value):
+        if value < 0:
+            value = 0
+        self.__likes = value
     # endregion
 
     @abstractmethod

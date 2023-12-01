@@ -7,14 +7,18 @@ class MovieApp:
         self.movies_collection = []
         self.users_collection = []
 
-    # region supporting staff
+    # region supporting methods
     def __get_user_via_username(self, username):
         return next(filter(lambda x: x.username == username, self.users_collection), None)
 
     @staticmethod
-    def __is_movie_owned_by_user(movie, user):
-        if movie.owner is not user:
+    def __does_user_own_movie(movie, user):
+        if not movie.owner == user:
             raise Exception(f"{user.username} is not the owner of the movie {movie.title}!")
+
+    def __is_movie_uploaded(self, movie):
+        if movie not in self.movies_collection:
+            raise Exception(f"The movie {movie.title} is not uploaded!")
 
     # endregion
 
@@ -32,10 +36,10 @@ class MovieApp:
         if not user:
             raise Exception("This user does not exist!")
 
-        self.__is_movie_owned_by_user(movie, user)
-
         if movie in self.movies_collection:
             raise Exception("Movie already added to the collection!")
+
+        self.__does_user_own_movie(movie, user)
 
         user.movies_owned.append(movie)
         self.movies_collection.append(movie)
@@ -43,24 +47,20 @@ class MovieApp:
         return f"{username} successfully added {movie.title} movie."
 
     def edit_movie(self, username: str, movie: Movie, **kwargs):
-        if movie not in self.movies_collection:
-            raise Exception(f"The movie {movie.title} is not uploaded!")
+        self.__is_movie_uploaded(movie)
 
         user = self.__get_user_via_username(username)
+        self.__does_user_own_movie(movie, user)
 
-        self.__is_movie_owned_by_user(movie, user)
-
-        for key, value in kwargs.items():
-            setattr(movie, key, value)
+        for attr, value in kwargs.items():
+            setattr(movie, attr, value)
 
         return f"{username} successfully edited {movie.title} movie."
 
     def delete_movie(self, username: str, movie: Movie):
-        if movie not in self.movies_collection:
-            raise Exception(f"The movie {movie.title} is not uploaded!")
-
+        self.__is_movie_uploaded(movie)
         user = self.__get_user_via_username(username)
-        self.__is_movie_owned_by_user(movie, user)
+        self.__does_user_own_movie(movie, user)
         self.movies_collection.remove(movie)
         user.movies_owned.remove(movie)
 
@@ -69,11 +69,14 @@ class MovieApp:
     def like_movie(self, username: str, movie: Movie):
         user = self.__get_user_via_username(username)
 
-        if movie.owner is user:
+        if user == movie.owner:
             raise Exception(f"{username} is the owner of the movie {movie.title}!")
 
         if movie in user.movies_liked:
             raise Exception(f"{username} already liked the movie {movie.title}!")
+
+        if user.age < movie.age_restriction:
+            return
 
         movie.likes += 1
         user.movies_liked.append(movie)
@@ -92,27 +95,13 @@ class MovieApp:
         return f"{username} disliked {movie.title} movie."
 
     def display_movies(self):
+        if not self.movies_collection:
+            return "No movies found."
+
         sorted_movies = sorted(self.movies_collection, key=lambda x: (-x.year, x.title))
 
-        return "\n".join(m.details() for m in sorted_movies) if sorted_movies else "No movies found."
+        return "\n".join(m.details() for m in sorted_movies)
 
     def __str__(self):
-        users_info = ", ".join(u.username for u in self.users_collection) or "No users."
-        movies_info = ", ".join(m.title for m in self.movies_collection) or "No movies."
-
-        return (f"All users: {users_info}\n"
-                f"All movies: {movies_info}")
-
-# class User:
-#     def __init__(self, username: str, age: int):
-#         self.username = username
-#         self.age = age
-#         self.movies_liked = []
-#         self.movies_owned = []
-# class Movie(ABC):
-#     def __init__(self, title: str, year: int, owner: object, age_restriction: int):
-#         self.title = title
-#         self.year = year
-#         self.owner = owner  # User
-#         self.age = age_restriction
-#         self.likes: int = 0
+        return (f"All users: {', '.join(u.username for u in self.users_collection) or 'No users.'}\n"
+                f"All movies: {', '.join(m.title for m in self.movies_collection) or 'No movies.'}")

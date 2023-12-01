@@ -34,7 +34,7 @@ class User:
             "Liked movies:" if self.movies_liked else "Liked movies:\nNo movies liked.",
             *[m.details() for m in self.movies_liked],
             "Owned movies:" if self.movies_owned else "Owned movies:\nNo movies owned.",
-            *[m.details() for m in self.movies_owned],
+            *[m.details() for m in self.movies_owned]
         ]
 
         return "\n".join(res)
