@@ -27,22 +27,18 @@ movie_app = MovieApp()
 print(movie_app.register_user('Martin', 24))
 user = movie_app.users_collection[0]
 movie = Action('Die Hard', 1988, user, 18)
-movie1 = Action('Die Hard1', 1988, user, 19)
 print(movie_app.upload_movie('Martin', movie))
-print(movie_app.upload_movie('Martin', movie1))
-
-
-# print(movie_app.movies_collection[0].title)
+print(movie_app.movies_collection[0].title)
 print(movie_app.register_user('Alexandra', 25))
 user2 = movie_app.users_collection[1]
 movie2 = Action('Free Guy', 2021, user2, 16)
-# movie_app.like_movie('Martin', movie2)
+print(movie_app.upload_movie('Alexandra', movie2))
+print(movie_app.edit_movie('Alexandra', movie2, title="Free Guy 2"))
 print(movie_app.like_movie('Martin', movie2))
-print(user)
 
-# print(movie_app.upload_movie('Alexandra', movie2))
-# print(movie_app.edit_movie('Alexandra', movie2, title="Free Guy 2"))
-# print(movie_app.like_movie('Martin', movie2))
+# print(movie_app.like_movie('Martin', movie))
+
+
 # print(movie_app.like_movie('Alexandra', movie))
 # print(movie_app.dislike_movie('Martin', movie2))
 # print(movie_app.like_movie('Martin', movie2))
