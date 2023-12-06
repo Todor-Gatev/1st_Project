@@ -1,5 +1,5 @@
 class Player:
-    players_names = []
+    __players_names = []
 
     def __init__(self, name: str, age: int, stamina: int = 100):
         self.name = name
@@ -13,13 +13,13 @@ class Player:
 
     @name.setter
     def name(self, value):
-        if value == "":
+        if value == '':
             raise ValueError("Name not valid!")
 
-        if value in self.players_names:
+        if value in Player.__players_names:
             raise Exception(f"Name {value} is already used!")
+        Player.__players_names.append(value)
 
-        self.players_names.append(value)
         self.__name = value
 
     @property
@@ -41,13 +41,14 @@ class Player:
     def stamina(self, value):
         if not 0 <= value <= 100:
             raise ValueError("Stamina not valid!")
-
         self.__stamina = value
 
     @property
     def need_sustenance(self):
-        return self.__stamina < 100
+        if self.stamina < 100:
+            return True
 
+        return False
     # endregion
 
     def __str__(self):
