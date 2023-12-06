@@ -6,14 +6,14 @@ class Supply(ABC):
         self.name = name
         self.energy = energy
 
-# region getters and setters
+    # region getters and setters
     @property
     def name(self):
         return self.__name
 
     @name.setter
     def name(self, value):
-        if value == "":
+        if value == '':
             raise ValueError("Name cannot be an empty string.")
 
         self.__name = value
@@ -28,7 +28,7 @@ class Supply(ABC):
             raise ValueError("Energy cannot be less than zero.")
 
         self.__energy = value
-# endregion
+    # endregion
 
     @abstractmethod
     def details(self):
