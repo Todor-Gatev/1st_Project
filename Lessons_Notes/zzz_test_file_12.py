@@ -1,5 +1,6 @@
-from sys import path
-print(*path, sep="\n")
+# from sys import path
+#
+# print(*path, sep="\n")
 
 # my_list = ['a', 'b', 'c', 'd']
 # a = ' - '.join(x for x in my_list)
@@ -65,3 +66,38 @@ print(*path, sep="\n")
 
 a = [[]] * 3
 print(a)
+
+
+def numbers_to_strings(argument):
+    switcher = {
+        0: "zero",
+        1: "one",
+        2: "two",
+    }
+
+    return switcher.get(argument, "nothing")
+
+
+class Python_Switch:
+    def day(self, month):
+        default = "Incorrect day"
+
+        return getattr(self, 'case_' + str(month), lambda: default)()
+
+    def case_1(self):
+        return "Jan"
+
+    def case_2(self):
+        return "Feb"
+
+    def case_3(self):
+        return "Mar"
+
+
+my_switch = Python_Switch()
+
+print(my_switch.day(1))
+
+print(my_switch.day(3))
+
+print(my_switch.day(4))
