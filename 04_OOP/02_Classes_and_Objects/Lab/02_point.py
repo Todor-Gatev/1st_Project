@@ -13,9 +13,9 @@ class Point:
         return f"The point has coordinates ({self.x},{self.y})"
 
 
-# a = Point(3, 7)
-# print(a.__dict__)
-# print(Point.__dict__)
+a = Point(3, 7)
+print(a.__dict__)
+print(Point.__dict__)
 
 p = Point(2, 4)
 print(p)
